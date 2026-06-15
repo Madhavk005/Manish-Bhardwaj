@@ -5,27 +5,41 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 
 const featuredProject = {
-  id: "rhythm2025",
-  title: "JECRC Rhythm 2025",
-  reach: "2.1M",
-  engagement: "+183%",
-  videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+  id: "virtual-podcast",
+  title: "THE VIRTUAL PODCAST Intro",
+  reach: "High Impact",
+  engagement: "Brand Identity",
+  videoUrl: "https://www.youtube.com/embed/3_oTy3uNRbo?si=5od7P57XeVm926Qr&autoplay=1&mute=1&loop=1&playlist=3_oTy3uNRbo",
   posterUrl: "https://images.unsplash.com/photo-1540039155732-d68f18d76d42?q=80&w=2069&auto=format&fit=crop",
   details: {
-    goal: "Create a highly energetic aftermovie that captures the essence of the festival and drives ticket sales for next year.",
-    challenges: "Over 50 hours of raw footage from 12 different cameras with varying color profiles.",
-    process: "Synchronized footage to a custom beat-matched track. Color graded to match the festival's neon theme.",
-    role: "Lead Editor & Colorist",
-    result: "Most viewed video in the university's history. 2.1M organic reach within 48 hours."
+    goal: "Design a high-energy, visually striking intro sequence to establish the brand identity and tone for The Virtual Podcast.",
+    challenges: "Condensing the core essence of the podcast into a fast-paced, engaging visual hook that grabs attention within the first 3 seconds.",
+    process: "Utilized dynamic typography, fluid motion graphics, and a driving audio track to create a seamless and impactful brand introduction.",
+    role: "Motion Graphics Artist & Video Editor",
+    result: "Established a professional and recognizable visual signature that elevates the production value of every episode."
   }
 };
 
 const otherProjects = [
-  { id: "p1", title: "Tech Brand Campaign", type: "Commercial", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" },
-  { id: "p2", title: "Creator Masterclass", type: "Youtube", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" },
-  { id: "p3", title: "Fitness Apparel Launch", type: "Reel", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" },
-  { id: "p4", title: "Podcast Highlights", type: "Shorts", image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1974&auto=format&fit=crop" },
+  { id: "jlf3", title: "JLF Day 3", type: "Reel", url: "https://youtube.com/shorts/qQsnVjubnos", image: "https://i.ytimg.com/vi/qQsnVjubnos/hqdefault.jpg" },
+  { id: "p2", title: "Creator Masterclass", type: "Youtube", url: "#", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" },
+  { id: "p3", title: "Fitness Apparel Launch", type: "Reel", url: "#", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" },
+  { id: "p4", title: "Podcast Highlights", type: "Shorts", url: "#", image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1974&auto=format&fit=crop" },
 ];
+
+function ShortsEmbed({ videoId }: { videoId: string }) {
+  return (
+    <div className="relative aspect-[9/16] w-full max-w-[240px] overflow-hidden rounded-[24px] mx-auto shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-neutral-800">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title="YouTube Shorts"
+        className="absolute inset-0 h-full w-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    </div>
+  );
+}
 
 export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
@@ -48,14 +62,12 @@ export default function FeaturedWork() {
           <div className="lg:col-span-8 relative group cursor-pointer" onClick={() => setSelectedProject(true)}>
             <div className="relative aspect-video rounded-[36px] overflow-hidden bg-dark transition-all duration-800 shadow-[0_10px_40px_rgba(0,0,0,.04)] group-hover:shadow-[0_25px_70px_rgba(0,0,0,.08)]">
               {/* Background Video */}
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                poster={featuredProject.posterUrl}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+              <iframe 
+                className="absolute inset-0 w-full h-full pointer-events-none scale-[1.15] transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.2]"
                 src={featuredProject.videoUrl}
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-colors duration-500" />
 
@@ -85,32 +97,9 @@ export default function FeaturedWork() {
           </div>
 
           {/* Grid of smaller projects */}
-          <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 lg:grid-rows-2 gap-8">
-            {otherProjects.slice(0, 2).map((project) => (
-              <div key={project.id} className="relative group cursor-pointer aspect-square lg:aspect-auto rounded-[28px] overflow-hidden bg-dark shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)]">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-300" />
-                
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <div className="flex items-end justify-between w-full">
-                    <div>
-                      <span className="text-primary text-[10px] font-bold uppercase tracking-widest mb-2 block">
-                        {project.type}
-                      </span>
-                      <h4 className="text-white font-bold text-xl leading-tight">
-                        {project.title}
-                      </h4>
-                    </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-400 text-white translate-x-2 group-hover:translate-x-0 transform">
-                      <ArrowRight size={20} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-4 md:gap-6 items-center">
+            <ShortsEmbed videoId="qQsnVjubnos" />
+            <ShortsEmbed videoId="HL-si5SAsi0" />
           </div>
 
         </div>
@@ -140,13 +129,13 @@ export default function FeaturedWork() {
                 className="w-full max-w-[1000px] bg-[#111111] rounded-[36px] overflow-hidden shadow-2xl border border-white/5 my-auto"
               >
                 <div className="aspect-[21/9] bg-dark relative">
-                  <video 
-                    autoPlay 
-                    muted 
-                    loop 
-                    playsInline
-                    className="w-full h-full object-cover opacity-90"
-                    src={featuredProject.videoUrl}
+                  <iframe 
+                    className="w-full h-full opacity-90"
+                    src={featuredProject.videoUrl.replace('&mute=1', '')}
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
                   <div className="absolute bottom-10 left-12">

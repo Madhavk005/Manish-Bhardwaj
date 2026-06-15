@@ -26,7 +26,7 @@ export default function About() {
             <div className="aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden relative group">
               {/* Image with B&W to Color transition */}
               <div 
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=2080&auto=format&fit=crop')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" 
+                className="absolute inset-0 bg-[url('/M3_08297.jpg')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" 
                 role="img"
                 aria-label="Portrait of Manish Bhardwaj"
               />

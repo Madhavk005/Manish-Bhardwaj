@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const retentionData = [
@@ -56,19 +56,7 @@ export default function Hero() {
               }}
               className="text-primary relative inline-block"
             >
-              Move
-              {/* Swoosh Underline */}
-              <svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <motion.path
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ delay: 0.8, duration: 1.5, ease: "easeOut" }}
-                  d="M2 18C45.5 4.5 120 -3.5 198 12"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-              </svg>
+              Demand
             </motion.span>
             <br />
             <motion.span
@@ -78,7 +66,7 @@ export default function Hero() {
               }}
               className="inline-block"
             >
-              People.
+              Attention.
             </motion.span>
           </h1>
           <motion.p 
@@ -105,11 +93,11 @@ export default function Hero() {
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#showreel"
+              href="#contact"
               className="group flex items-center gap-2 px-8 py-4 bg-white border border-border text-foreground rounded-full font-medium hover:bg-dark hover:text-white transition-colors duration-300 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:scale-[1.02]"
             >
-              <Play size={20} className="text-primary group-hover:text-white transition-colors" />
-              Watch Showreel
+              <Calendar size={20} className="text-primary group-hover:text-white transition-colors" />
+              Book a Call
             </a>
           </motion.div>
           <motion.p 
@@ -136,13 +124,15 @@ export default function Hero() {
             className="absolute top-0 right-0 md:-right-10 bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border w-64 z-10 cursor-default"
           >
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-full bg-gray-200" />
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">
+                <img src="/avalyn-logo.png" alt="Avalyn Media" className="w-full h-full object-cover bg-white" />
+              </div>
               <div>
-                <div className="text-sm font-bold leading-tight">Creator</div>
-                <div className="text-xs text-muted">@youtube</div>
+                <div className="text-sm font-bold leading-tight">Avalyn Media</div>
+                <div className="text-xs text-muted">Creative Agency</div>
               </div>
             </div>
-            <p className="text-sm font-medium text-foreground">&quot;Watch time doubled on the new format.&quot;</p>
+            <p className="text-sm font-medium text-foreground">&quot;The visual storytelling perfectly captured our brand's voice and boosted engagement.&quot;</p>
           </motion.div>
 
           {/* Social Proof Card 2 */}
@@ -154,13 +144,15 @@ export default function Hero() {
             className="absolute bottom-0 left-0 md:-left-10 bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border w-64 z-10 cursor-default"
           >
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-full bg-gray-200" />
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">
+                <img src="/ikaki-logo.png" alt="Ikaki Niwas" className="w-full h-full object-cover bg-white" />
+              </div>
               <div>
-                <div className="text-sm font-bold leading-tight">Brand</div>
-                <div className="text-xs text-muted">Marketing Director</div>
+                <div className="text-sm font-bold leading-tight">Ikaki Niwas</div>
+                <div className="text-xs text-muted">Heritage Boutique Hotel</div>
               </div>
             </div>
-            <p className="text-sm font-medium text-foreground">&quot;This edit is insane. Let&apos;s do another project.&quot;</p>
+            <p className="text-sm font-medium text-foreground">&quot;Stunning cinematography and edits that truly elevated our digital presence.&quot;</p>
           </motion.div>
 
           {/* Retention Graph */}

@@ -100,8 +100,8 @@ export default function BeforeAfter() {
                 className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
                 style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
               >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-dark hover:scale-110 transition-transform">
-                  <MoveHorizontal size={24} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 backdrop-blur-md rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.2)] flex items-center justify-center text-dark hover:scale-110 transition-transform border border-white/20">
+                  <MoveHorizontal size={24} strokeWidth={1.5} />
                 </div>
               </div>
             </div>

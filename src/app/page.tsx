@@ -2,7 +2,7 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import Showreel from "@/components/sections/Showreel";
 import About from "@/components/sections/About";
-import EditDNA from "@/components/sections/EditDNA";
+import SoftwareProficiency from "@/components/sections/SoftwareProficiency";
 import Services from "@/components/sections/Services";
 import BeforeAfter from "@/components/sections/BeforeAfter";
 import FeaturedWork from "@/components/sections/FeaturedWork";
@@ -19,7 +19,7 @@ export default function Home() {
       <Hero />
       <Showreel />
       <About />
-      <EditDNA />
+      <SoftwareProficiency />
       <Services />
       <BeforeAfter />
       <FeaturedWork />

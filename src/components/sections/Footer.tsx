@@ -25,7 +25,7 @@ export default function Footer() {
             <div>
               <h4 className="font-bold text-foreground mb-6">Navigation</h4>
               <ul className="flex flex-col gap-4">
-                {["Services", "Works", "Reviews", "FAQ"].map((item) => (
+                {["Services", "Works", "Reviews"].map((item) => (
                   <li key={item}>
                     <Link href={`#${item.toLowerCase()}`} className="text-muted hover:text-primary transition-colors">
                       {item}

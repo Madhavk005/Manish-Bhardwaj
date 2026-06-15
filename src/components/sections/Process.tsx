@@ -25,22 +25,22 @@ const steps = [
     content: (
       <div className="mt-6 flex flex-col gap-3">
         {/* Mock Premiere Timeline */}
-        <div className="h-6 w-full bg-blue-500/20 rounded-md border border-blue-500/30 overflow-hidden flex">
-          <div className="h-full w-1/3 bg-blue-500/50 border-r border-blue-600/50" />
-          <div className="h-full w-1/4 bg-blue-500/30 border-r border-blue-600/50 ml-1" />
-          <div className="h-full w-2/5 bg-blue-500/60 ml-2" />
+        <div className="h-6 w-full bg-[#111] rounded-md border border-border/50 overflow-hidden flex shadow-inner">
+          <div className="h-full w-1/3 bg-primary/80 border-r border-black/50" />
+          <div className="h-full w-1/4 bg-primary/60 border-r border-black/50 ml-1" />
+          <div className="h-full w-2/5 bg-primary/90 ml-2" />
         </div>
         {/* Mock Waveform */}
-        <div className="h-6 w-full bg-green-500/10 rounded-md flex items-center justify-around px-2 opacity-70">
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className="w-1 bg-green-500 rounded-full" style={{ height: `${Math.max(20, Math.random() * 100)}%` }} />
+        <div className="h-6 w-full bg-[#111] border border-border/50 rounded-md flex items-center justify-around px-2 shadow-inner">
+          {[40, 70, 30, 85, 50, 90, 60, 45, 80, 55, 75, 40, 95, 65, 35, 85, 50, 70, 45, 80].map((height, i) => (
+            <div key={i} className="w-1 bg-zinc-500 rounded-full" style={{ height: `${height}%` }} />
           ))}
         </div>
         {/* Mock Color Wheels */}
         <div className="flex gap-4 mt-2">
-          <div className="w-8 h-8 rounded-full border-2 border-orange-400 bg-gradient-to-tr from-orange-500/20 to-transparent" />
-          <div className="w-8 h-8 rounded-full border-2 border-blue-400 bg-gradient-to-tr from-blue-500/20 to-transparent" />
-          <div className="w-8 h-8 rounded-full border-2 border-purple-400 bg-gradient-to-tr from-purple-500/20 to-transparent" />
+          <div className="w-8 h-8 rounded-full border-2 border-cyan-400/80 bg-gradient-to-tr from-cyan-500/20 to-transparent shadow-sm" />
+          <div className="w-8 h-8 rounded-full border-2 border-fuchsia-400/80 bg-gradient-to-tr from-fuchsia-500/20 to-transparent shadow-sm" />
+          <div className="w-8 h-8 rounded-full border-2 border-yellow-400/80 bg-gradient-to-tr from-yellow-500/20 to-transparent shadow-sm" />
         </div>
       </div>
     )

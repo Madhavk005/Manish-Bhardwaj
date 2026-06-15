@@ -5,24 +5,34 @@ import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    title: "Reels",
-    tag: "Attention First",
-    description: "Fast paced edits. Captions. Hooks. Motion graphics.",
+    title: "F&B Videos",
+    tag: "Sensory",
+    description: "Food & Beverages. Cinematic lighting. Crave-inducing edits.",
   },
   {
-    title: "Youtube",
-    tag: "Watch Time",
-    description: "Long-form edits designed for engagement.",
+    title: "Documentary & Testimonials",
+    tag: "Storytelling",
+    description: "Real people. Real stories. Pacing that builds trust and authentic emotional connection.",
   },
   {
-    title: "Aftermovies",
-    tag: "Emotion",
-    description: "Cinematic storytelling. Event coverage.",
+    title: "Generic Style",
+    tag: "Adaptable",
+    description: "Versatile edits. Clean cuts. Perfect for corporate communication and standard brand messaging.",
   },
   {
-    title: "Commercials",
-    tag: "Conversion",
-    description: "Brand campaigns. Promotional videos.",
+    title: "Logos & Brand Animations",
+    tag: "Identity",
+    description: "Custom motion graphics. Fluid transitions. Breathing life into static brand assets.",
+  },
+  {
+    title: "Motion UI",
+    tag: "Experience",
+    description: "UI/UX animation. Product walkthroughs. Screen replacements and digital interaction design.",
+  },
+  {
+    title: "Others",
+    tag: "Custom",
+    description: "Unique project scopes. Experimental edits. Custom workflows for specific brand needs.",
   }
 ];
 
