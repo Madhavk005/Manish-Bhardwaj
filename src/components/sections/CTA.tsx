@@ -36,10 +36,10 @@ export default function CTA() {
             I work with creators and brands who believe great videos change everything.
           </p>
           
-          <button className="group relative inline-flex items-center justify-center gap-3 px-12 py-5 bg-white text-[#111111] rounded-full text-[18px] font-bold transition-all duration-300 hover:bg-primary hover:text-white hover:scale-[1.02] shadow-[0_10px_40px_rgba(255,255,255,0.05)] hover:shadow-[0_25px_70px_rgba(255,90,31,0.2)]">
+          <a href="mailto:zhyambomanish62@gmail.com" className="group relative inline-flex items-center justify-center gap-3 px-12 py-5 bg-white text-[#111111] rounded-full text-[18px] font-bold transition-all duration-300 hover:bg-primary hover:text-white hover:scale-[1.02] shadow-[0_10px_40px_rgba(255,255,255,0.05)] hover:shadow-[0_25px_70px_rgba(255,90,31,0.2)]">
             Book A Call
             <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
           
           <div className="mt-16 flex flex-col items-center gap-3">
             <div className="flex items-center gap-2 text-white/60 text-[16px]">

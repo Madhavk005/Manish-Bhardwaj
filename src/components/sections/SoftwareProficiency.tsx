@@ -36,7 +36,7 @@ export default function SoftwareProficiency() {
               <div className="flex justify-between items-end mb-4">
                 <div className="flex items-center gap-4 md:gap-6">
                   {/* Using standard img for external SVGs to avoid next.config domain requirement */}
-                  <img src={skill.icon} alt={`${skill.name} logo`} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                  <img loading="lazy" decoding="async" src={skill.icon} alt={`${skill.name} logo`} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                   <h3 className="text-2xl md:text-3xl font-medium tracking-[-0.01em]">
                     {skill.name}
                   </h3>

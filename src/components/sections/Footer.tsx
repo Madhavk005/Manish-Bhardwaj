@@ -38,13 +38,31 @@ export default function Footer() {
             <div>
               <h4 className="font-bold text-foreground mb-6">Socials</h4>
               <ul className="flex flex-col gap-4">
-                {["Instagram", "LinkedIn", "Behance", "YouTube"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-muted hover:text-primary transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <a href="https://www.instagram.com/_manish__bhardwaj_?igsh=ZmhoN3gwajBndHV3" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors">
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/manish-bhardwaj-095041245?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors">
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:zhyambomanish62@gmail.com" className="text-muted hover:text-primary transition-colors">
+                    Email
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/917023008854" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors">
+                    WhatsApp
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+917023224823" className="text-muted hover:text-primary transition-colors">
+                    Phone
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

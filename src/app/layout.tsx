@@ -7,8 +7,35 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 import SmoothScrolling from "@/components/SmoothScrolling";
 
 export const metadata: Metadata = {
-  title: "Edits That Move People | Manish Bhardwaj",
-  description: "I help creators and brands craft videos people remember, share and watch till the end.",
+  title: "Manish Bhardwaj | Premium Video Editor & Content Strategist",
+  description: "High-end video editing and creative direction. Crafting cinematic visuals and scroll-stopping content for leading brands and creators.",
+  keywords: ["Video Editor", "Content Strategist", "Cinematography", "Video Production", "Premiere Pro", "After Effects", "Social Media Management"],
+  authors: [{ name: "Manish Bhardwaj" }],
+  creator: "Manish Bhardwaj",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://manishbhardwaj.com",
+    title: "Manish Bhardwaj | Premium Video Editor & Content Strategist",
+    description: "High-end video editing and creative direction. Crafting cinematic visuals and scroll-stopping content for leading brands and creators.",
+    siteName: "Manish Bhardwaj Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manish Bhardwaj | Premium Video Editor & Content Strategist",
+    description: "High-end video editing and creative direction. Crafting cinematic visuals and scroll-stopping content for leading brands and creators.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
