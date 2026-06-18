@@ -22,6 +22,7 @@ const services = [
     title: "Generic Style",
     tag: "Adaptable",
     description: "Versatile edits. Clean cuts. Perfect for corporate communication and standard brand messaging.",
+    href: "/generic-style"
   },
   {
     title: "Logos & Brand Animations",
@@ -33,11 +34,13 @@ const services = [
     title: "Motion UI",
     tag: "Experience",
     description: "UI/UX animation. Product walkthroughs. Screen replacements and digital interaction design.",
+    href: "/motion-ui"
   },
   {
     title: "Others",
     tag: "Custom",
     description: "Unique project scopes. Experimental edits. Custom workflows for specific brand needs.",
+    href: "/others"
   }
 ];
 

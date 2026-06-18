@@ -2,6 +2,20 @@
 
 import { motion } from "framer-motion";
 
+function VideoEmbed({ videoId }: { videoId: string }) {
+  return (
+    <div className="relative aspect-video w-full overflow-hidden rounded-[28px] border border-border shadow-[0_10px_40px_rgba(0,0,0,.04)] group-hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] transition-shadow duration-400 mx-auto">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title="YouTube Video"
+        className="absolute inset-0 h-full w-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    </div>
+  );
+}
+
 function ShortsEmbed({ videoId }: { videoId: string }) {
   return (
     <div className="relative aspect-[9/16] w-full max-w-[360px] overflow-hidden rounded-[28px] border border-border shadow-[0_10px_40px_rgba(0,0,0,.04)] group-hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] transition-shadow duration-400 mx-auto">
@@ -16,20 +30,32 @@ function ShortsEmbed({ videoId }: { videoId: string }) {
   );
 }
 
-export default function FBVideos() {
+export default function Others() {
   return (
     <section className="py-[80px] md:py-[120px] bg-background min-h-screen">
       <div className="container mx-auto px-6 md:px-12 max-w-[1280px]">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-foreground">
-            Food & Beverages
+            Others
           </h2>
           <p className="text-muted text-[18px]">
-            Cinematic lighting. Crave-inducing edits. Visually delicious content.
+            Unique project scopes. Experimental edits. Custom workflows for specific brand needs.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 items-start mt-12 md:mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="group w-full cursor-pointer"
+          >
+            <VideoEmbed videoId="rmhNOayYEao" />
+          </motion.div>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 items-start mt-12 md:mt-16 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +63,7 @@ export default function FBVideos() {
             transition={{ duration: 0.6 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="C6AYmIeINvw" />
+            <ShortsEmbed videoId="5okcneQOBDc" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +72,7 @@ export default function FBVideos() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="AOUNS1YmenA" />
+            <ShortsEmbed videoId="dCfTNDM_i0A" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -55,25 +81,7 @@ export default function FBVideos() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="wzHtPSwiPIs" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
-          >
-            <ShortsEmbed videoId="p2cTj3JwPz0" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
-          >
-            <ShortsEmbed videoId="UiBygTIdubQ" />
+            <ShortsEmbed videoId="O7nKSSV3A7s" />
           </motion.div>
         </div>
       </div>
