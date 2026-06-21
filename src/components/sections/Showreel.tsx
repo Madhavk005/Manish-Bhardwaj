@@ -2,7 +2,7 @@
 
 export default function Showreel() {
   return (
-    <section id="showreel" className="py-24 bg-background relative">
+    <section id="showreel" className="py-16 md:py-24 bg-background relative">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-[32px] md:text-[48px] font-bold tracking-tight mb-4">

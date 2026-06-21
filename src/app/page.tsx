@@ -7,7 +7,7 @@ import Services from "@/components/sections/Services";
 import BeforeAfter from "@/components/sections/BeforeAfter";
 import FeaturedWork from "@/components/sections/FeaturedWork";
 import CaseStudies from "@/components/sections/CaseStudies";
-import Process from "@/components/sections/Process";
+
 import Reviews from "@/components/sections/Reviews";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
@@ -24,7 +24,7 @@ export default function Home() {
       <BeforeAfter />
       <FeaturedWork />
       <CaseStudies />
-      <Process />
+
       <Reviews />
       <CTA />
       <Footer />

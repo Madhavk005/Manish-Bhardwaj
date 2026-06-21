@@ -46,15 +46,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-[80px] md:py-[120px] bg-background">
+    <section id="services" className="py-16 md:py-24 lg:py-[120px] bg-background">
       <div className="container mx-auto px-6 md:px-12 max-w-[1280px]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6 md:gap-8">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-foreground">
-              The Arsenal.
+              What We Do Best
             </h2>
             <p className="text-muted text-[18px] max-w-md">
-              Specialized editing workflows designed to solve specific problems.
+              We craft scroll-stopping edits that keep your audience hooked and your content looking top-tier.
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative bg-white border border-border rounded-[28px] p-8 transition-all duration-400 overflow-hidden flex flex-col h-full min-h-[300px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:-translate-y-2 cursor-pointer"
+                className="group relative bg-white border border-border rounded-[28px] p-6 md:p-8 transition-all duration-400 overflow-hidden flex flex-col h-full min-h-[250px] md:min-h-[300px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:-translate-y-2 cursor-pointer"
               >
                 {/* Subtle hover glow */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />

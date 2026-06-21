@@ -20,12 +20,7 @@ const featuredProject = {
   }
 };
 
-const otherProjects = [
-  { id: "jlf3", title: "JLF Day 3", type: "Reel", url: "https://youtube.com/shorts/qQsnVjubnos", image: "https://i.ytimg.com/vi/qQsnVjubnos/hqdefault.jpg" },
-  { id: "p2", title: "Creator Masterclass", type: "Youtube", url: "#", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" },
-  { id: "p3", title: "Fitness Apparel Launch", type: "Reel", url: "#", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" },
-  { id: "p4", title: "Podcast Highlights", type: "Shorts", url: "#", image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1974&auto=format&fit=crop" },
-];
+
 
 function ShortsEmbed({ videoId }: { videoId: string }) {
   return (
@@ -45,9 +40,9 @@ export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
 
   return (
-    <section id="works" className="py-[80px] md:py-[120px] bg-background">
+    <section id="works" className="py-16 md:py-24 lg:py-[120px] bg-background">
       <div className="container mx-auto px-6 md:px-12 max-w-[1280px]">
-        <div className="mb-16">
+        <div className="mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-foreground">
             Selected Works
           </h2>
@@ -138,13 +133,13 @@ export default function FeaturedWork() {
                     allowFullScreen
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
-                  <div className="absolute bottom-10 left-12">
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">{featuredProject.title}</h2>
+                  <div className="absolute bottom-6 left-6 md:bottom-10 md:left-12">
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">{featuredProject.title}</h2>
                   </div>
                 </div>
 
-                <div className="p-12 md:p-16">
-                  <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 mb-16">
+                <div className="p-6 sm:p-8 md:p-12 lg:p-16">
+                  <div className="grid md:grid-cols-2 gap-x-16 gap-y-8 md:gap-y-12 mb-12 md:mb-16">
                     <div>
                       <h4 className="text-muted uppercase text-[10px] font-bold tracking-widest mb-4">Goal</h4>
                       <p className="text-white/90 text-[18px] leading-[1.7]">{featuredProject.details.goal}</p>

@@ -22,9 +22,9 @@ const services = [
 
 export default function CaseStudies() {
   return (
-    <section id="beyond-editing" className="py-24 bg-white">
+    <section id="beyond-editing" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="mb-16">
+        <div className="mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Beyond The Edit
           </h2>

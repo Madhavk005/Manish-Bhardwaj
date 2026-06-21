@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const SOFTWARE_SKILLS = [
   { name: "Premiere Pro", percentage: 90, icon: "/softwares/Adobe%20Premiere%20Pro.png" },
@@ -12,7 +13,7 @@ const SOFTWARE_SKILLS = [
 
 export default function SoftwareProficiency() {
   return (
-    <section className="relative py-32 bg-[#050505] text-white overflow-hidden">
+    <section className="relative py-16 md:py-32 bg-[#050505] text-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-[1000px]">
         
         <motion.div
@@ -20,7 +21,7 @@ export default function SoftwareProficiency() {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-20"
+          className="mb-12 md:mb-20"
         >
           <h2 className="text-[32px] md:text-[48px] font-bold tracking-[-0.02em] leading-tight mb-4">
             Software Proficiency
@@ -30,13 +31,18 @@ export default function SoftwareProficiency() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col space-y-12">
+        <div className="flex flex-col space-y-8 md:space-y-12">
           {SOFTWARE_SKILLS.map((skill, index) => (
             <div key={skill.name} className="group">
               <div className="flex justify-between items-end mb-4">
                 <div className="flex items-center gap-4 md:gap-6">
-                  {/* Using standard img for external SVGs to avoid next.config domain requirement */}
-                  <img loading="lazy" decoding="async" src={skill.icon} alt={`${skill.name} logo`} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                  <Image 
+                    src={skill.icon} 
+                    alt={`${skill.name} logo`} 
+                    width={40} 
+                    height={40} 
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain" 
+                  />
                   <h3 className="text-2xl md:text-3xl font-medium tracking-[-0.01em]">
                     {skill.name}
                   </h3>

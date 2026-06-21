@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const retentionData = [
@@ -17,8 +18,8 @@ export default function Hero() {
   const currentData = activeCategory !== null ? retentionData[activeCategory] : { name: "Average", value: 72, points: "0,75 20,65 40,85 60,75 80,90 100,72" };
 
   return (
-    <section className="relative min-h-[100svh] pt-32 pb-20 flex items-center overflow-hidden bg-background">
-      <div className="container mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-16 lg:gap-8 items-center max-w-[1280px]">
+    <section className="relative min-h-[100svh] pt-32 md:pt-40 pb-16 md:pb-24 flex items-center overflow-hidden bg-background">
+      <div className="container mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center max-w-[1280px]">
         {/* Left Column */}
         <motion.div
           initial="hidden"
@@ -38,7 +39,7 @@ export default function Hero() {
           >
             ✦ Trusted by 50+ Creators
           </motion.div>
-          <h1 className="text-[52px] md:text-[72px] lg:text-[96px] leading-[0.95] tracking-[-0.03em] font-bold text-foreground mb-8">
+          <h1 className="text-[40px] md:text-[56px] lg:text-[72px] leading-[1.05] tracking-[-0.02em] font-bold text-foreground mb-8">
             <motion.span
               variants={{
                 hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
@@ -46,7 +47,7 @@ export default function Hero() {
               }}
               className="inline-block"
             >
-              Edits That
+              Creating Visual Experiences That
             </motion.span>
             <br />
             <motion.span
@@ -74,9 +75,11 @@ export default function Hero() {
               hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
               visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" } },
             }}
-            className="text-[16px] md:text-[18px] text-muted leading-[1.7] mb-10 max-w-lg"
+            className="text-[15px] md:text-[17px] text-muted leading-[1.7] mb-10 max-w-xl"
           >
-            I help creators and brands craft videos people remember, share and watch till the end.
+            For brands, creators, startups and businesses that refuse to blend in.
+            <br/><br/>
+            I create edits, motion graphics and visual systems that make people stop scrolling and start watching. Now you&apos;re communicating value.
           </motion.p>
           <motion.div 
             variants={{
@@ -87,14 +90,14 @@ export default function Hero() {
           >
             <a
               href="#works"
-              className="group flex items-center gap-2 px-8 py-4 bg-dark text-white rounded-full font-medium hover:bg-primary transition-colors duration-300 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:scale-[1.02]"
+              className="group flex justify-center items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 w-full sm:w-auto bg-dark text-white rounded-full font-medium hover:bg-primary transition-colors duration-300 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:scale-[1.02]"
             >
               See My Work
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#contact"
-              className="group flex items-center gap-2 px-8 py-4 bg-white border border-border text-foreground rounded-full font-medium hover:bg-dark hover:text-white transition-colors duration-300 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:scale-[1.02]"
+              className="group flex justify-center items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 w-full sm:w-auto bg-white border border-border text-foreground rounded-full font-medium hover:bg-dark hover:text-white transition-colors duration-300 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:scale-[1.02]"
             >
               <Calendar size={20} className="text-primary group-hover:text-white transition-colors" />
               Book a Call
@@ -113,7 +116,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Right Column - Retention Graph & Social Proof */}
-        <div className="lg:col-span-5 relative w-full h-[500px] flex items-center justify-center">
+        <div className="lg:col-span-5 relative w-full h-[400px] md:h-[500px] flex items-center justify-center mt-8 lg:mt-0">
           
           {/* Social Proof Card 1 */}
           <motion.div
@@ -125,14 +128,14 @@ export default function Hero() {
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">
-                <img src="/avalyn-logo.png" alt="Avalyn Media" className="w-full h-full object-cover bg-white" />
+                <Image src="/avalyn-logo.png" alt="Avalyn Media" width={40} height={40} className="w-full h-full object-cover bg-white" />
               </div>
               <div>
                 <div className="text-sm font-bold leading-tight">Avalyn Media</div>
                 <div className="text-xs text-muted">Creative Agency</div>
               </div>
             </div>
-            <p className="text-sm font-medium text-foreground">&quot;The visual storytelling perfectly captured our brand's voice and boosted engagement.&quot;</p>
+            <p className="text-sm font-medium text-foreground">&quot;The visual storytelling perfectly captured our brand&apos;s voice and boosted engagement.&quot;</p>
           </motion.div>
 
           {/* Social Proof Card 2 */}
@@ -145,7 +148,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">
-                <img src="/ikaki-logo.png" alt="Ikaki Niwas" className="w-full h-full object-cover bg-white" />
+                <Image src="/ikaki-logo.png" alt="Ikaki Niwas" width={40} height={40} className="w-full h-full object-cover bg-white" />
               </div>
               <div>
                 <div className="text-sm font-bold leading-tight">Ikaki Niwas</div>

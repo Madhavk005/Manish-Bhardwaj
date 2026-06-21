@@ -11,9 +11,9 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-background overflow-hidden">
+    <section id="about" className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           
           {/* Left Column - Image */}
           <motion.div 
@@ -56,9 +56,20 @@ export default function About() {
               <span className="text-primary">obsession.</span>
             </h2>
             
-            <p className="text-lg text-muted mb-12 max-w-md">
-              I partner with ambitious creators and brands to engineer attention. No fluff. Just calculated edits designed to keep eyes on the screen and emotions high.
-            </p>
+            <div className="text-base md:text-lg text-muted mb-12 max-w-xl space-y-4">
+              <p>
+                I partner with ambitious creators and brands to engineer attention. No fluff. Just calculated edits designed to keep eyes on the screen and emotions high.
+              </p>
+              <p>
+                My name is Manish Bhardwaj, and I am a professional video editor and motion graphics artist dedicated to transforming creative visions into compelling visual realities.
+              </p>
+              <p>
+                With over 4+ years of experience in the industry, my journey has equipped me with a robust skill set and a deep understanding of visual storytelling. I spent two years honing my craft in a dynamic office environment, collaborating on diverse projects and mastering workflow efficiency.
+              </p>
+              <p className="font-semibold text-foreground">
+                My goal is simple: Create visuals that people don&apos;t just watch - they remember.
+              </p>
+            </div>
 
             <div className="grid grid-cols-2 gap-8">
               {stats.map((stat, idx) => (

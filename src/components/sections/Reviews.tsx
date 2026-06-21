@@ -14,8 +14,8 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-[80px] md:py-[120px] bg-[#0A0A0A] overflow-hidden border-y border-white/5">
-      <div className="container mx-auto px-6 md:px-12 mb-16 max-w-[1280px]">
+    <section id="reviews" className="py-16 md:py-24 lg:py-[120px] bg-[#0A0A0A] overflow-hidden border-y border-white/5">
+      <div className="container mx-auto px-6 md:px-12 mb-12 md:mb-16 max-w-[1280px]">
         <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-white">
           Real Messages.
         </h2>
