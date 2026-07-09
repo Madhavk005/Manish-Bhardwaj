@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section id="about" className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
           
           {/* Left Column - Image */}
           <motion.div 
@@ -21,9 +21,9 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
+            className="relative lg:sticky lg:top-32"
           >
-            <div className="aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden relative group">
+            <div className="aspect-[4/5] max-w-md mx-auto lg:ml-0 lg:mr-auto rounded-3xl overflow-hidden relative group shadow-2xl">
               {/* Image with B&W to Color transition */}
               <div 
                 className="absolute inset-0 bg-[url('/M3_08297.jpg')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" 

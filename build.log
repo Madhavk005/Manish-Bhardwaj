@@ -1,0 +1,1363 @@
+
+> my-app@0.1.0 build
+> next build
+
+▲ Next.js 16.2.9 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 45 errors:
+./src/components/sections/BeforeAfter.tsx:5:1
+Module not found: Can't resolve 'lucide-react'
+  [90m3 |[0m [36mimport[0m { useState, useRef, useEffect } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { useInView, animate } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mMoveHorizontal[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mBeforeAfter[0m() {
+  [90m8 |[0m   [36mconst[0m [sliderPosition, setSliderPosition] = useState([35m50[0m);
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/BeforeAfter.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/CTA.tsx:4:1
+Module not found: Can't resolve 'lucide-react'
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { motion } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mArrowRight[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mCTA[0m() {
+  [90m7 |[0m   [36mreturn[0m (
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/CTA.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/CaseStudies.tsx:4:1
+Module not found: Can't resolve 'lucide-react'
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { motion } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mCamera[0m, [33mTrendingUp[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m services = [
+  [90m7 |[0m   {
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/CaseStudies.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/FeaturedWork.tsx:5:1
+Module not found: Can't resolve 'lucide-react'
+  [90m3 |[0m [36mimport[0m { useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { motion, [33mAnimatePresence[0m } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mArrowRight[0m, [33mX[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36mconst[0m featuredProject = {
+  [90m8 |[0m   id: [32m"virtual-podcast"[0m,
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/FeaturedWork.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/Footer.tsx:6:1
+Module not found: Can't resolve 'lucide-react'
+  [90m4 |[0m [36mimport[0m { motion, [33mAnimatePresence[0m } [36mfrom[0m [32m"framer-motion"[0m;
+  [90m5 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m { [33mX[0m, [33mMonitor[0m, [33mCoffee[0m, [33mMusic[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m
+  [90m8 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mFooter[0m() {
+  [90m9 |[0m   [36mconst[0m [isEditMode, setIsEditMode] = useState([36mfalse[0m);
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/Footer.tsx
+    ./src/app/others/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/Hero.tsx:5:1
+Module not found: Can't resolve 'lucide-react'
+  [90m3 |[0m [36mimport[0m { useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { motion, [33mAnimatePresence[0m } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mArrowRight[0m, [33mCalendar[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+  [90m7 |[0m [36mimport[0m { cn } [36mfrom[0m [32m"@/lib/utils"[0m;
+  [90m8 |[0m
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/Hero.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/Navbar.tsx:5:1
+Module not found: Can't resolve 'lucide-react'
+  [90m3 |[0m [36mimport[0m { useState, useEffect } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { motion, [33mAnimatePresence[0m } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mMenu[0m, [33mX[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+  [90m7 |[0m [36mimport[0m { cn } [36mfrom[0m [32m"@/lib/utils"[0m;
+  [90m8 |[0m
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/Navbar.tsx
+    ./src/app/others/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/sections/Services.tsx:4:1
+Module not found: Can't resolve 'lucide-react'
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { motion } [36mfrom[0m [32m"framer-motion"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mArrowUpRight[0m } [36mfrom[0m [32m"lucide-react"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+  [90m7 |[0m
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/sections/Services.tsx
+    ./src/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/animate/index.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mGroupAnimationWithThen[0m } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { removeItem } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m [36mimport[0m { animateSequence } [36mfrom[0m [32m'./sequence.mjs'[0m;
+  [90m4 |[0m [36mimport[0m { animateSubject } [36mfrom[0m [32m'./subject.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { resolveElements } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { isDOMKeyframes } [36mfrom[0m [32m'../utils/is-dom-keyframes.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mfunction[0m resolveSubjects(subject, keyframes, scope, selectorCache) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/subject.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/subject.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { motionValue, spring } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { createAnimationsFromSequence } [36mfrom[0m [32m'../sequence/create.mjs'[0m;
+  [90m3 |[0m [36mimport[0m { animateSubject } [36mfrom[0m [32m'./subject.mjs'[0m;
+  [90m4 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/animate/subject.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m ...eSingleValue, visualElementStore, animateTarget, isMotionValue } [36mfro.[0m.[32m.[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...ant } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m ...DOMVisualElement, createObjectVisualElement } [36mfrom[0m [32m'../utils/create-...[0m
+  [90m4 |[0m ...eyframes } [36mfrom[0m [32m'../utils/is-dom-keyframes.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/animate/subject.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/animate/subject.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/sequence/create.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m ...lue, defaultOffset, isGenerator, createGeneratorEasing, fillOffset }.[36m..[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...secondsToMilliseconds, warning, reverseEasing, getEasingForSegment }.[36m..[0m
+  [90m3 |[0m ...jects } [36mfrom[0m [32m'../animate/resolve-subjects.mjs'[0m;
+  [90m4 |[0m ...epeatDuration } [36mfrom[0m [32m'./utils/calc-repeat-duration.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/sequence/create.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/sequence/create.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { mixNumber } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { getEasingForSegment, removeItem } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mfunction[0m eraseKeyframes(sequence, startTime, endTime) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/sequence/create.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/sequence/create.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/sequence.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/animation/utils/create-visual-element.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m ...ment, [33mSVGVisualElement[0m, [33mHTMLVisualElement[0m, visualElementStore, [33mObjec...[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...
+  [90m3 |[0m ...ement) {
+  [90m4 |[0m ...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/animation/utils/create-visual-element.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/subject.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/animation/utils/create-visual-element.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/subject.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/animation/animate/index.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs:3:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+  [90m2 |[0m [36mimport[0m { jsx } [36mfrom[0m [32m'react/jsx-runtime'[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { isHTMLElement } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m * [36mas[0m [33mReact[0m [36mfrom[0m [32m'react'[0m;
+  [90m5 |[0m [36mimport[0m { useId, useRef, useContext, useInsertionEffect } [36mfrom[0m [32m'react'[0m;
+  [90m6 |[0m [36mimport[0m { [33mMotionConfigContext[0m } [36mfrom[0m [32m'../../context/MotionConfigContext....[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [Client Component Browser]
+    ./src/components/sections/Footer.tsx [Client Component Browser]
+    ./src/components/sections/Footer.tsx [Server Component]
+    ./src/app/others/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [Client Component SSR]
+    ./src/components/sections/Footer.tsx [Client Component SSR]
+    ./src/components/sections/Footer.tsx [Server Component]
+    ./src/app/others/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/context/MotionContext/utils.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { isControllingVariants, isVariantLabel } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m
+  [90m3 |[0m [36mfunction[0m getCurrentTreeVariants(props, context) {
+  [90m4 |[0m     [36mif[0m (isControllingVariants(props)) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/context/MotionContext/utils.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/context/MotionContext/create.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/context/MotionContext/utils.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/context/MotionContext/create.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/events/add-pointer-event.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { addDomEvent } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { addPointerInfo } [36mfrom[0m [32m'./event-info.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mfunction[0m addPointerEvent(target, eventName, handler, options) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/events/add-pointer-event.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/gestures/pan/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/events/add-pointer-event.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/gestures/pan/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/events/event-info.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { isPrimaryPointer } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m
+  [90m3 |[0m [36mfunction[0m extractEventInfo(event) {
+  [90m4 |[0m     [36mreturn[0m {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/events/event-info.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/gestures/hover.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/events/event-info.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/gestures/hover.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/drag/VisualElementDragControls.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m ...ngBoxToBox, addValueToWillChange, animateMotionValue, mixNumber, add...
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...
+  [90m3 |[0m ...
+  [90m4 |[0m ...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/drag/VisualElementDragControls.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/gestures/drag/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/drag/VisualElementDragControls.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/gestures/drag/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/drag/index.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { noop } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m [36mimport[0m { [33mVisualElementDragControls[0m } [36mfrom[0m [32m'./VisualElementDragControls....[0m
+  [90m4 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/drag/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/drag/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/drag/utils/constraints.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { mixNumber, calcLength } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { progress, clamp } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m
+  [90m4 |[0m /**
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/drag/utils/constraints.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/gestures/drag/VisualElementDragControls.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/gestures/drag/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/drag/utils/constraints.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/gestures/drag/VisualElementDragControls.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/gestures/drag/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/focus.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m, addDomEvent } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { pipe } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mclass[0m [33mFocusGesture[0m [36mextends[0m [33mFeature[0m {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/focus.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/focus.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/hover.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m, hover, frame } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { extractEventInfo } [36mfrom[0m [32m'../events/event-info.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mfunction[0m handleHoverEvent(node, event, lifecycle) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/hover.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/hover.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/pan/PanSession.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m ...[36mrt[0m { frameData, frame, isPrimaryPointer, cancelFrame } [36mfrom[0m [32m'motion-...[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...[36mrt[0m { pipe, secondsToMilliseconds, millisecondsToSeconds } [36mfrom[0m [32m'moti...[0m
+  [90m3 |[0m ...[36mrt[0m { addPointerEvent } [36mfrom[0m [32m'../../events/add-pointer-event.mjs'[0m;
+  [90m4 |[0m ...[36mrt[0m { extractEventInfo } [36mfrom[0m [32m'../../events/event-info.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/pan/PanSession.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/gestures/pan/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/pan/PanSession.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/gestures/pan/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/pan/index.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m, frame } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { noop } [36mfrom[0m [32m'motion-utils'[0m;
+  [90m3 |[0m [36mimport[0m { addPointerEvent } [36mfrom[0m [32m'../../events/add-pointer-event.mjs'[0m;
+  [90m4 |[0m [36mimport[0m { getContextWindow } [36mfrom[0m [32m'../../utils/get-context-window.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/pan/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/pan/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/gestures/press.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m, press, frame } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { extractEventInfo } [36mfrom[0m [32m'../events/event-info.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mfunction[0m handlePressEvent(node, event, lifecycle) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/gestures/press.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/gestures/press.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/animation/exit.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m, resolveVariant } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m
+  [90m3 |[0m [36mlet[0m id = [35m0[0m;
+  [90m4 |[0m [36mclass[0m [33mExitAnimationFeature[0m [36mextends[0m [33mFeature[0m {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/animation/exit.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/animations.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/animation/exit.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/animations.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/animation/index.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m ... { [33mFeature[0m, createAnimationState, isAnimationControls } [36mfrom[0m [32m'motion...[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...
+  [90m3 |[0m ...[33mAnimationFeature[0m [36mextends[0m [33mFeature[0m {
+  [90m4 |[0m ...*
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/animation/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/animations.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/animation/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/animations.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/definitions.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { getFeatureDefinitions, setFeatureDefinitions } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m
+  [90m3 |[0m [36mconst[0m featureProps = {
+  [90m4 |[0m     animation: [
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/definitions.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/definitions.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/drag.mjs:4:1
+Module not found: Can't resolve 'motion-dom'
+  [90m2 |[0m [36mimport[0m { [33mPanGesture[0m } [36mfrom[0m [32m'../../gestures/pan/index.mjs'[0m;
+  [90m3 |[0m [36mimport[0m { [33mMeasureLayout[0m } [36mfrom[0m [32m'./layout/MeasureLayout.mjs'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mHTMLProjectionNode[0m } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mconst[0m drag = {
+  [90m7 |[0m     pan: {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/drag.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/layout.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mHTMLProjectionNode[0m } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mMeasureLayout[0m } [36mfrom[0m [32m'./layout/MeasureLayout.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mconst[0m layout = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/layout.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/layout.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs:3:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+  [90m2 |[0m [36mimport[0m { jsx } [36mfrom[0m [32m'react/jsx-runtime'[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { globalProjectionState, frame, microtask } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { useContext, [33mComponent[0m } [36mfrom[0m [32m'react'[0m;
+  [90m5 |[0m [36mimport[0m { usePresence } [36mfrom[0m [32m'../../../components/AnimatePresence/use-pr...[0m
+  [90m6 |[0m [36mimport[0m { [33mLayoutGroupContext[0m } [36mfrom[0m [32m'../../../context/LayoutGroupContext...[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/layout.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/layout/MeasureLayout.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/layout.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/load-features.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { setFeatureDefinitions } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { getInitializedFeatureDefinitions } [36mfrom[0m [32m'./definitions.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mfunction[0m loadFeatures(features) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/load-features.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/load-features.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/features/viewport/index.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFeature[0m } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { observeIntersection } [36mfrom[0m [32m'./observers.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mconst[0m thresholdNames = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/features/viewport/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/features/viewport/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/features/gestures.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/feature-bundle.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { optimizedAppearDataAttribute } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { useContext, useRef, useInsertionEffect, useEffect } [36mfrom[0m [32m'react'[0m;
+  [90m4 |[0m [36mimport[0m { [33mLazyContext[0m } [36mfrom[0m [32m'../../context/LazyContext.mjs'[0m;
+  [90m5 |[0m [36mimport[0m { [33mMotionConfigContext[0m } [36mfrom[0m [32m'../../context/MotionConfigContext....[0m
+
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/utils/use-visual-element.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/motion/utils/use-visual-state.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m ...
+[31m[1m>[0m [90m2 |[0m ...ontrollingVariants, isVariantNode, isAnimationControls, resolveVaria...
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m ...[32mt'[0m;
+  [90m4 |[0m ...[32m./../context/MotionContext/index.mjs'[0m;
+  [90m5 |[0m ...[32m'../../context/PresenceContext.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/motion/utils/use-visual-state.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/svg/use-svg-visual-state.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/motion/utils/use-visual-state.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/svg/use-svg-visual-state.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/dom/create-visual-element.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mSVGVisualElement[0m, [33mHTMLVisualElement[0m } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mFragment[0m } [36mfrom[0m [32m'react'[0m;
+  [90m3 |[0m [36mimport[0m { isSVGComponent } [36mfrom[0m [32m'./utils/is-svg-component.mjs'[0m;
+  [90m4 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/dom/create-visual-element.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/dom/create-visual-element.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/dom/use-render.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { isMotionValue } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mFragment[0m, useMemo, createElement } [36mfrom[0m [32m'react'[0m;
+  [90m4 |[0m [36mimport[0m { useHTMLProps } [36mfrom[0m [32m'../html/use-props.mjs'[0m;
+  [90m5 |[0m [36mimport[0m { useSVGProps } [36mfrom[0m [32m'../svg/use-props.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/dom/utils/filter-props.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { isMotionValue } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { isValidMotionProp } [36mfrom[0m [32m'../../../motion/utils/valid-prop.mjs'[0m;
+  [90m3 |[0m
+  [90m4 |[0m [36mlet[0m shouldForward = (key) => !isValidMotionProp(key);
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/dom/utils/filter-props.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/dom/utils/filter-props.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/dom/viewport/index.mjs:1:1
+Module not found: Can't resolve 'motion-dom'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { resolveElements } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m
+  [90m3 |[0m [36mconst[0m thresholds = {
+  [90m4 |[0m     some: [35m0[0m,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/dom/viewport/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/utils/use-in-view.mjs [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Client Component Browser]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/dom/viewport/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/utils/use-in-view.mjs [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Client Component SSR]
+    ./src/components/sections/BeforeAfter.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/html/use-html-visual-state.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { scrapeHTMLMotionValuesFromProps } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { makeUseVisualState } [36mfrom[0m [32m'../../motion/utils/use-visual-state...[0m
+  [90m4 |[0m [36mimport[0m { createHtmlRenderState } [36mfrom[0m [32m'./utils/create-render-state.mjs'[0m;
+  [90m5 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/html/use-html-visual-state.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/html/use-html-visual-state.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/html/use-props.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m ...[32mlient"[0m;
+[31m[1m>[0m [90m2 |[0m ... { isMotionValue, isForcedMotionValue, buildHTMLStyles } [36mfrom[0m [32m'motio...[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m ... { useMemo } [36mfrom[0m [32m'react'[0m;
+  [90m4 |[0m ... { createHtmlRenderState } [36mfrom[0m [32m'./utils/create-render-state.mjs'[0m;
+  [90m5 |[0m ...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/html/use-props.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/html/use-props.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/svg/use-props.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { buildSVGAttrs, isSVGTag } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { useMemo } [36mfrom[0m [32m'react'[0m;
+  [90m4 |[0m [36mimport[0m { copyRawValuesOnly } [36mfrom[0m [32m'../html/use-props.mjs'[0m;
+  [90m5 |[0m [36mimport[0m { createSvgRenderState } [36mfrom[0m [32m'./utils/create-render-state.mjs'[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/svg/use-props.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/svg/use-props.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/dom/use-render.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/framer-motion/dist/es/render/svg/use-svg-visual-state.mjs:2:1
+Module not found: Can't resolve 'motion-dom'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { scrapeSVGMotionValuesFromProps } [36mfrom[0m [32m'motion-dom'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { makeUseVisualState } [36mfrom[0m [32m'../../motion/utils/use-visual-state...[0m
+  [90m4 |[0m [36mimport[0m { createSvgRenderState } [36mfrom[0m [32m'./utils/create-render-state.mjs'[0m;
+  [90m5 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/framer-motion/dist/es/render/svg/use-svg-visual-state.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component Browser]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component Browser]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/framer-motion/dist/es/render/svg/use-svg-visual-state.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/motion/index.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/create-proxy.mjs [Client Component SSR]
+    ./node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Client Component SSR]
+    ./src/components/sections/DocumentaryTestimonials.tsx [Server Component]
+    ./src/app/documentary-testimonials/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./src/components/sections/BeforeAfter.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/CTA.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/CaseStudies.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/FeaturedWork.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/Footer.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/Hero.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/Navbar.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/sections/Services.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    ... collapsed 37 duplicate lines matching above 1 lines 37 times...

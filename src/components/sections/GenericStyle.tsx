@@ -73,7 +73,7 @@ export default function GenericStyle() {
           </motion.div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 items-start mt-12 md:mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mt-12 md:mt-16 justify-items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,6 +226,15 @@ export default function GenericStyle() {
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
             <ShortsEmbed videoId="_NcPuvnHNeY" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 1.7 }}
+            className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
+          >
+            <ShortsEmbed videoId="qonnQ3OaDwU" />
           </motion.div>
         </div>
       </div>

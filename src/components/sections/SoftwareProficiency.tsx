@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const SOFTWARE_SKILLS = [
-  { name: "Premiere Pro", percentage: 90, icon: "/softwares/Adobe%20Premiere%20Pro.png" },
-  { name: "After Effects", percentage: 70, icon: "/softwares/Adobe%20After%20Effects.png" },
-  { name: "Photoshop", percentage: 80, icon: "/softwares/Adobe%20Photoshop.png" },
-  { name: "Illustrator", percentage: 50, icon: "/softwares/Adobe%20Illustrator.png" },
+  { name: "Premiere Pro", percentage: 90, icon: "/softwares/Adobe Premiere Pro.png" },
+  { name: "After Effects", percentage: 70, icon: "/softwares/Adobe After Effects.png" },
+  { name: "Photoshop", percentage: 80, icon: "/softwares/Adobe Photoshop.png" },
+  { name: "Illustrator", percentage: 50, icon: "/softwares/Adobe Illustrator.png" },
   { name: "Notion", percentage: 75, icon: "/softwares/Notion.png" },
 ];
 

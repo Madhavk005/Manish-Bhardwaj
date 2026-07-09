@@ -24,7 +24,7 @@ const featuredProject = {
 
 function ShortsEmbed({ videoId }: { videoId: string }) {
   return (
-    <div className="relative aspect-[9/16] w-full max-w-[240px] overflow-hidden rounded-[24px] mx-auto shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-neutral-800">
+    <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[24px] mx-auto shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-neutral-800">
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
         title="YouTube Shorts"
@@ -51,14 +51,14 @@ export default function FeaturedWork() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8">
+        <div className="flex flex-col gap-12 md:gap-16 max-w-6xl mx-auto">
           
           {/* Main Featured Project */}
-          <div className="lg:col-span-8 relative group cursor-pointer" onClick={() => setSelectedProject(true)}>
-            <div className="relative aspect-video rounded-[36px] overflow-hidden bg-dark transition-all duration-800 shadow-[0_10px_40px_rgba(0,0,0,.04)] group-hover:shadow-[0_25px_70px_rgba(0,0,0,.08)]">
+          <div className="w-full relative group cursor-pointer" onClick={() => setSelectedProject(true)}>
+            <div className="relative aspect-video w-full rounded-[24px] md:rounded-[36px] overflow-hidden bg-dark transition-all duration-800 shadow-[0_10px_40px_rgba(0,0,0,.04)] group-hover:shadow-[0_25px_70px_rgba(0,0,0,.08)]">
               {/* Background Video */}
               <iframe 
-                className="absolute inset-0 w-full h-full pointer-events-none scale-[1.15] transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.2]"
+                className="absolute inset-0 w-full h-full pointer-events-none scale-[1.05] transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.1]"
                 src={featuredProject.videoUrl}
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -67,10 +67,10 @@ export default function FeaturedWork() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-colors duration-500" />
 
               {/* Overlay Content */}
-              <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                <div className="flex items-end justify-between w-full">
+              <div className="absolute inset-0 p-6 sm:p-8 md:p-12 flex flex-col justify-end">
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between w-full gap-6">
                   <div>
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
                       <span className="px-4 py-1.5 bg-black/60 border border-white/10 rounded-full text-white/90 text-xs font-bold tracking-wider uppercase">
                         {featuredProject.reach} Reach
                       </span>
@@ -78,13 +78,13 @@ export default function FeaturedWork() {
                         {featuredProject.engagement} Engagement
                       </span>
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
                       {featuredProject.title}
                     </h3>
                   </div>
 
-                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-primary group-hover:border-primary transition-colors duration-400 shrink-0">
-                    <ArrowRight size={24} className="text-white group-hover:translate-x-1 transition-transform duration-400" />
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-primary group-hover:border-primary transition-colors duration-400 shrink-0">
+                    <ArrowRight size={28} className="text-white group-hover:translate-x-1 transition-transform duration-400" />
                   </div>
                 </div>
               </div>
@@ -92,7 +92,8 @@ export default function FeaturedWork() {
           </div>
 
           {/* Grid of smaller projects */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-4 md:gap-6 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 w-full">
+            <ShortsEmbed videoId="osFJ78ha2jA" />
             <ShortsEmbed videoId="qQsnVjubnos" />
             <ShortsEmbed videoId="HL-si5SAsi0" />
           </div>

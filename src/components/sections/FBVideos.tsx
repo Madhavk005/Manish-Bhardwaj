@@ -29,7 +29,7 @@ export default function FBVideos() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 items-start mt-12 md:mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mt-12 md:mt-16 justify-items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function FBVideos() {
             transition={{ duration: 0.6 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="C6AYmIeINvw" />
+            <ShortsEmbed videoId="cpnYXpi-gOc" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function FBVideos() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="AOUNS1YmenA" />
+            <ShortsEmbed videoId="B0F5bsensHk" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function FBVideos() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="wzHtPSwiPIs" />
+            <ShortsEmbed videoId="C6AYmIeINvw" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,13 +64,31 @@ export default function FBVideos() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
-            <ShortsEmbed videoId="p2cTj3JwPz0" />
+            <ShortsEmbed videoId="AOUNS1YmenA" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
+          >
+            <ShortsEmbed videoId="wzHtPSwiPIs" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
+          >
+            <ShortsEmbed videoId="p2cTj3JwPz0" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="group w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[320px] flex-none mx-auto cursor-pointer"
           >
             <ShortsEmbed videoId="UiBygTIdubQ" />
