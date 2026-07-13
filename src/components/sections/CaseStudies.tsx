@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Camera, TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
@@ -9,14 +10,14 @@ const services = [
     icon: Camera,
     description: "Bringing concepts to life behind the lens. From conceptualization to final execution, I direct talent, configure lighting, and capture high-fidelity cinematic footage that aligns perfectly with your brand's creative vision.",
     features: ["Cinematography", "On-Set Direction", "Lighting & Rigging", "Pre-production Planning"],
-    image: "https://images.unsplash.com/photo-1601506521937-0121a7fe2b67?q=80&w=2071&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop"
   },
   {
     title: "Social Media Management",
     icon: TrendingUp,
     description: "Turning great content into measurable growth. I develop data-driven content strategies, manage posting schedules, and optimize distribution across platforms to maximize organic reach and audience engagement.",
     features: ["Content Strategy", "Audience Growth", "Analytics & Reporting", "Trend Analysis"],
-    image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1974&auto=format&fit=crop"
   }
 ];
 
@@ -44,9 +45,12 @@ export default function CaseStudies() {
               className="group relative rounded-[32px] overflow-hidden bg-[#FAFAFA] border border-border flex flex-col h-full"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${service.image})` }}
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 flex items-center gap-3">

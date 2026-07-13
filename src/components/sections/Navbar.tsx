@@ -26,6 +26,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className={cn(
@@ -73,7 +84,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute inset-0 h-screen bg-white flex flex-col items-center justify-center gap-8 px-6"
+              className="fixed inset-0 z-40 h-[100dvh] w-full bg-background flex flex-col items-center justify-center gap-8 px-6"
             >
               {navLinks.map((link) => (
                 <Link

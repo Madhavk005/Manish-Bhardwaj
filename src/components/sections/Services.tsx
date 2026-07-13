@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -32,7 +33,7 @@ const services = [
     tag: "Identity",
     description: "Custom motion graphics. Fluid transitions. Breathing life into static brand assets.",
     href: "/logo-animations",
-    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "Motion UI",
@@ -41,19 +42,13 @@ const services = [
     href: "/motion-ui",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
   },
-  {
-    title: "Direction & Shoot",
-    tag: "Production",
-    description: "On-set direction, professional cinematography, and full-scale video production to capture the perfect shots.",
-    href: "/direction-shoot",
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop"
-  },
+
   {
     title: "Others",
     tag: "Custom",
     description: "Unique project scopes. Experimental edits. Custom workflows for specific brand needs.",
     href: "/others",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
@@ -64,10 +59,10 @@ export default function Services() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6 md:gap-8">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-foreground">
-              What We Do Best
+              What I Do Best
             </h2>
             <p className="text-muted text-[18px] max-w-md">
-              We craft scroll-stopping edits that keep your audience hooked and your content looking top-tier.
+              I craft scroll-stopping edits that keep your audience hooked and your content looking top-tier.
             </p>
           </div>
         </div>
@@ -95,10 +90,13 @@ export default function Services() {
                 </div>
 
                 <div className="w-full h-48 rounded-[16px] overflow-hidden relative z-10 mb-8 border border-border/50">
-                  <img 
+                  <Image 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index <= 1}
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </div>
 

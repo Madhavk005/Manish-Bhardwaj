@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const SOFTWARE_SKILLS = [
-  { name: "Premiere Pro", percentage: 90, icon: "/softwares/Adobe Premiere Pro.png" },
-  { name: "After Effects", percentage: 70, icon: "/softwares/Adobe After Effects.png" },
-  { name: "Photoshop", percentage: 80, icon: "/softwares/Adobe Photoshop.png" },
-  { name: "Illustrator", percentage: 50, icon: "/softwares/Adobe Illustrator.png" },
-  { name: "Notion", percentage: 75, icon: "/softwares/Notion.png" },
+  { name: "Premiere Pro", percentage: 90, icon: "/softwares/adobe-premiere-pro.png" },
+  { name: "After Effects", percentage: 70, icon: "/softwares/adobe-after-effects.png" },
+  { name: "Photoshop", percentage: 80, icon: "/softwares/adobe-photoshop.png" },
+  { name: "Illustrator", percentage: 50, icon: "/softwares/adobe-illustrator.png" },
+  { name: "Notion", percentage: 75, icon: "/softwares/notion.png" },
 ];
 
 export default function SoftwareProficiency() {

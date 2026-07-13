@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useInView, animate } from "framer-motion";
 import { MoveHorizontal } from "lucide-react";
+import Image from "next/image";
 
 export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -67,32 +68,44 @@ export default function BeforeAfter() {
             >
               {/* RAW Image (Background) */}
               <div 
-                className="absolute inset-0 bg-cover bg-center grayscale opacity-80"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop')" }}
+                className="absolute inset-0 grayscale opacity-80"
                 role="img"
                 aria-label="Raw video footage"
               >
-                <div className="absolute top-6 left-6 px-4 py-2 bg-black/50 backdrop-blur-md rounded-full text-white/70 text-sm font-medium">
+                <Image
+                  src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop"
+                  alt="Raw video footage"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+                <div className="absolute top-6 left-6 px-4 py-2 bg-black/50 backdrop-blur-md rounded-full text-white/70 text-sm font-medium z-10">
                   RAW
                 </div>
               </div>
 
               {/* EDITED Image (Foreground, clipped) */}
               <div 
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0"
                 style={{ 
-                  backgroundImage: "url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop')",
                   clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
                 }}
                 role="img"
                 aria-label="Edited video footage"
               >
-                <div className="absolute top-6 right-6 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">
+                <Image
+                  src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop"
+                  alt="Edited video footage"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+                <div className="absolute top-6 right-6 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium z-10">
                   EDITED
                 </div>
                 {/* Simulated color grading / LUT overlay */}
-                <div className="absolute inset-0 bg-[#FF5A1F] mix-blend-overlay opacity-10 pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-[#FF5A1F] mix-blend-overlay opacity-10 pointer-events-none z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10" />
               </div>
 
               {/* Slider Handle */}
@@ -111,28 +124,28 @@ export default function BeforeAfter() {
           <div ref={metricsRef} className="lg:col-span-4 flex flex-col justify-center gap-6">
             <div className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-border">
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Retention</div>
-              <div className="flex items-center gap-4">
-                <span className="text-3xl font-bold text-foreground opacity-30">17%</span>
-                <span className="text-muted text-xl">→</span>
-                <span className="text-[40px] font-bold text-primary tracking-tight">{retention}%</span>
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className="text-2xl md:text-3xl font-bold text-foreground opacity-30">17%</span>
+                <span className="text-muted text-lg md:text-xl">→</span>
+                <span className="text-3xl md:text-[40px] font-bold text-primary tracking-tight">{retention}%</span>
               </div>
             </div>
 
             <div className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-border">
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Watch Time</div>
-              <div className="flex items-center gap-4">
-                <span className="text-3xl font-bold text-foreground opacity-30">32s</span>
-                <span className="text-muted text-xl">→</span>
-                <span className="text-[40px] font-bold text-primary tracking-tight">2m 48s</span>
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className="text-2xl md:text-3xl font-bold text-foreground opacity-30">32s</span>
+                <span className="text-muted text-lg md:text-xl">→</span>
+                <span className="text-3xl md:text-[40px] font-bold text-primary tracking-tight">2m 48s</span>
               </div>
             </div>
 
             <div className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-border">
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Click Through Rate</div>
-              <div className="flex items-center gap-4">
-                <span className="text-3xl font-bold text-foreground opacity-30">1.2%</span>
-                <span className="text-muted text-xl">→</span>
-                <span className="text-[40px] font-bold text-primary tracking-tight">{ctr}%</span>
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className="text-2xl md:text-3xl font-bold text-foreground opacity-30">1.2%</span>
+                <span className="text-muted text-lg md:text-xl">→</span>
+                <span className="text-3xl md:text-[40px] font-bold text-primary tracking-tight">{ctr}%</span>
               </div>
             </div>
           </div>

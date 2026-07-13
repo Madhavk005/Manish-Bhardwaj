@@ -23,7 +23,8 @@ export default function Showreel() {
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerPolicy="strict-origin-when-cross-origin" 
-            allowFullScreen
+            loading="lazy"
+        allowFullScreen
             className="absolute top-0 left-0"
           ></iframe>
         </div>

@@ -37,7 +37,7 @@ export default function CTA() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4 sm:px-0">
-            <a href="mailto:zhyambomanish62@gmail.com" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-12 sm:py-5 bg-white text-[#111111] rounded-full text-[16px] sm:text-[18px] font-bold transition-all duration-300 hover:bg-primary hover:text-white hover:scale-[1.02] shadow-[0_10px_40px_rgba(255,255,255,0.05)] hover:shadow-[0_25px_70px_rgba(255,90,31,0.2)]">
+            <a href="https://wa.me/917023008854" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-12 sm:py-5 bg-white text-[#111111] rounded-full text-[16px] sm:text-[18px] font-bold transition-all duration-300 hover:bg-primary hover:text-white hover:scale-[1.02] shadow-[0_10px_40px_rgba(255,255,255,0.05)] hover:shadow-[0_25px_70px_rgba(255,90,31,0.2)]">
               Book A Call
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>

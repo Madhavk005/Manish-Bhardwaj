@@ -96,7 +96,9 @@ export default function Hero() {
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#contact"
+              href="https://wa.me/917023008854"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex justify-center items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 w-full sm:w-auto bg-white border border-border text-foreground rounded-full font-medium hover:bg-dark hover:text-white transition-colors duration-300 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:scale-[1.02]"
             >
               <Calendar size={20} className="text-primary group-hover:text-white transition-colors" />
@@ -124,7 +126,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1, rotate: -6 }}
             whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-0 right-0 md:-right-10 bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border w-64 z-10 cursor-default"
+            className="hidden md:block absolute top-0 -right-10 bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border w-64 z-10 cursor-default"
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">
@@ -144,7 +146,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1, rotate: 6 }}
             whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-0 left-0 md:-left-10 bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border w-64 z-10 cursor-default"
+            className="hidden md:block absolute bottom-0 -left-10 bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border w-64 z-10 cursor-default"
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">

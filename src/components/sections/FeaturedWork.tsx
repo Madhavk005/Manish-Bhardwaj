@@ -22,19 +22,7 @@ const featuredProject = {
 
 
 
-function ShortsEmbed({ videoId }: { videoId: string }) {
-  return (
-    <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[24px] mx-auto shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-neutral-800">
-      <iframe
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube Shorts"
-        className="absolute inset-0 h-full w-full"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
-    </div>
-  );
-}
+import { ShortsEmbed } from "@/components/ui/ShortsEmbed";
 
 export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
@@ -131,7 +119,8 @@ export default function FeaturedWork() {
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen
+                    loading="lazy"
+        allowFullScreen
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
                   <div className="absolute bottom-6 left-6 md:bottom-10 md:left-12">

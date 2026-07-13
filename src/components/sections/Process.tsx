@@ -20,7 +20,7 @@ const steps = [
   },
   {
     num: "02",
-    title: "We Edit",
+    title: "I Edit",
     icon: Layout,
     content: (
       <div className="mt-6 flex flex-col gap-3">
