@@ -102,33 +102,49 @@ export default function SectionRail() {
 
   return (
     <>
-      {/* Mobile & Tablet — compact dot rail */}
+      {/* Mobile & Tablet — labeled section menu (text-only, active orange bar) */}
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         aria-label="Section navigation"
-        className="fixed right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 lg:hidden flex flex-col items-center gap-2.5"
+        className="fixed right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 lg:hidden flex flex-col items-end gap-2.5"
       >
-        {sections.map((section) => (
-          <motion.button
-            key={section.id}
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            onClick={() =>
-              document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" })
-            }
-            aria-current={active === section.id ? "true" : undefined}
-            aria-label={`Go to ${section.label}`}
-            className={cn(
-              "rounded-full transition-all duration-500 ease-out",
-              active === section.id
-                ? "w-2 h-4 bg-primary"
-                : "w-1.5 h-1.5 bg-white/25"
-            )}
-          />
-        ))}
+        {sections.map((section, index) => {
+          const isActive = active === section.id;
+          return (
+            <motion.button
+              key={section.id}
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.5 + index * 0.05,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              onClick={() =>
+                document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" })
+              }
+              aria-current={isActive ? "true" : undefined}
+              className="group flex items-center gap-2.5 py-1.5 cursor-pointer"
+            >
+              <span
+                className={cn(
+                  "text-[11px] font-medium tracking-[0.08em] leading-none transition-colors duration-500",
+                  isActive ? "text-white" : "text-white/25 group-hover:text-white/60"
+                )}
+              >
+                {section.label}
+              </span>
+              {isActive && (
+                <span
+                  aria-hidden
+                  className="h-[3px] w-5 rounded-full bg-primary transition-all duration-500 ease-out"
+                />
+              )}
+            </motion.button>
+          );
+        })}
       </motion.nav>
 
       {/* Desktop — Apple-style magnification rail */}
