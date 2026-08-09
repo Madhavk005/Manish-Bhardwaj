@@ -66,14 +66,12 @@ function DockItem({
       >
         {section.label}
       </span>
-      <span
-        className={cn(
-          "rounded-full transition-all duration-500 ease-out",
-          active
-            ? "w-5 h-[3px] bg-primary"
-            : "w-[5px] h-[5px] bg-white/25 group-hover:bg-white/60 group-hover:w-2.5"
-        )}
-      />
+      {active && (
+        <span
+          aria-hidden
+          className="h-[3px] w-5 rounded-full bg-primary"
+        />
+      )}
     </motion.button>
   );
 }

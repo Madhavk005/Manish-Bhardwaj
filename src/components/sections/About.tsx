@@ -7,7 +7,7 @@ const stats = [
   { value: "4+", label: "Years Experience" },
   { value: "300+", label: "Videos Edited" },
   { value: "50+", label: "Creators" },
-  { value: "20M+", label: "Views Generated" },
+  { value: "200M+", label: "Views Generated" },
 ];
 
 export default function About() {
