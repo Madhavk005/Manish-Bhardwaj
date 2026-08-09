@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X, Play } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const featuredProject = {
   id: "virtual-podcast",
@@ -23,14 +24,36 @@ const featuredProject = {
 
 import { ShortsGrid } from "@/components/ui/ShortsGrid";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { TagPill, spring } from "@/components/ui/TagPill";
 
 const shorts = ["osFJ78ha2jA", "qQsnVjubnos", "HL-si5SAsi0"];
 
 export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
+  const [uiVisible, setUiVisible] = useState(true);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    let timer: ReturnType<typeof setTimeout>;
+    const reveal = () => {
+      setUiVisible(true);
+      clearTimeout(timer);
+      timer = setTimeout(() => setUiVisible(false), 3000);
+    };
+    reveal();
+    window.addEventListener("mousemove", reveal);
+    window.addEventListener("keydown", reveal);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("mousemove", reveal);
+      window.removeEventListener("keydown", reveal);
+    };
+  }, []);
 
   useEffect(() => {
     if (!selectedProject) return;
@@ -125,24 +148,27 @@ export default function FeaturedWork() {
             </div>
 
             {/* Project Info */}
-            <div className="flex items-start justify-between gap-4 pt-5 md:pt-7">
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-6 pt-5 md:pt-7">
               <div className="min-w-0">
-                <div className="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
-                  <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-white/70 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase">
-                    {featuredProject.reach} Reach
-                  </span>
-                  <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-[#FF5A1F]/10 text-[#FF5A1F] rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase">
-                    {featuredProject.engagement} Engagement
-                  </span>
-                </div>
                 <h3 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground tracking-tight leading-tight">
                   {featuredProject.title}
                 </h3>
+                <motion.div
+                  animate={{ opacity: uiVisible ? 1 : 0, y: uiVisible ? 0 : 8 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  className={cn(
+                    "flex flex-wrap items-center gap-2 mt-3 md:mt-4",
+                    !uiVisible && "pointer-events-none"
+                  )}
+                >
+                  <TagPill label={`${featuredProject.reach} Reach`} dotClassName="bg-white/70" />
+                  <TagPill label={`${featuredProject.engagement} Engagement`} dotClassName="bg-primary" />
+                </motion.div>
               </div>
 
               <button
                 onClick={(e) => { e.stopPropagation(); setSelectedProject(true); }}
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white text-[#171717] text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300 shrink-0 mt-1"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white text-[#171717] text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300 shrink-0"
               >
                 View Case Study
                 <ArrowRight size={16} />
@@ -199,28 +225,34 @@ export default function FeaturedWork() {
                   />
                   <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent pointer-events-none" />
                   <div className="pointer-events-none md:absolute md:bottom-10 md:left-12 md:max-w-none">
-                    <div className="flex flex-wrap items-center gap-2 mb-2 md:mb-3 pt-4 px-4 md:pt-0 md:px-0">
-                      <span className="px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-white/10 border border-white/15 text-white/80 text-[10px] md:text-[11px] font-bold tracking-wider uppercase">
-                        The Virtual Podcast
-                      </span>
-                      <span className="px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-[#FF5A1F]/20 border border-[#FF5A1F]/30 text-[#FF5A1F] text-[10px] md:text-[11px] font-bold tracking-wider uppercase">
-                        Episode Intro
-                      </span>
-                      <a
+                    <h2 id="case-study-title" className="text-2xl md:text-5xl font-bold tracking-tight text-white px-4 md:px-0">{featuredProject.title}</h2>
+                    <motion.div
+                      animate={{ opacity: uiVisible ? 1 : 0, y: uiVisible ? 0 : 8 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      className={cn(
+                        "flex flex-wrap items-center gap-2 mt-2.5 md:mt-3 px-4 md:px-0",
+                        uiVisible ? "pointer-events-auto" : "pointer-events-none"
+                      )}
+                    >
+                      <TagPill label="The Virtual Podcast" dotClassName="bg-white/70" />
+                      <TagPill label="Episode Intro" dotClassName="bg-primary" />
+                      <motion.a
                         href="https://www.youtube.com/watch?v=3_oTy3uNRbo"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="pointer-events-auto px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-primary text-white text-[10px] md:text-[11px] font-bold tracking-wider uppercase hover:bg-white hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.94 }}
+                        transition={spring}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1.5 text-[11px] font-semibold tracking-wide text-white shadow-[0_4px_16px_rgba(255,90,31,0.35)] hover:bg-white hover:text-[#111111] transition-colors"
                       >
                         Watch on YouTube
-                      </a>
-                    </div>
-                    <h2 id="case-study-title" className="text-2xl md:text-5xl font-bold tracking-tight text-white px-4 md:px-0 pb-4 md:pb-0">{featuredProject.title}</h2>
+                      </motion.a>
+                    </motion.div>
                   </div>
                 </div>
 
                 <div className="p-5 sm:p-8 md:p-12 lg:p-16">
-                  <div className="grid md:grid-cols-2 gap-x-6 lg:gap-x-16 gap-y-8 md:gap-y-12 mb-10 md:mb-12">
+                  <div className="grid md:grid-cols-2 gap-x-6 lg:gap-x-16 gap-y-8 md:gap-y-12 mb-10 md:mb-14">
                     <div>
                       <h4 className="text-zinc-400 uppercase text-[10px] font-bold tracking-widest mb-4">Goal</h4>
                       <p className="text-white/90 text-[16px] md:text-[18px] leading-[1.7]">{featuredProject.details.goal}</p>
@@ -240,7 +272,7 @@ export default function FeaturedWork() {
                   </div>
 
                   {/* Result Highlight */}
-                  <div className="rounded-[20px] md:rounded-[24px] bg-[#FF5A1F]/10 border border-[#FF5A1F]/20 p-5 md:p-7 mb-12 md:mb-16">
+                  <div className="rounded-[20px] md:rounded-[24px] bg-[#FF5A1F]/10 border border-[#FF5A1F]/20 p-5 md:p-7 mb-10 md:mb-14">
                     <h4 className="text-primary uppercase text-[10px] font-bold tracking-widest mb-3">
                       The Result
                     </h4>
@@ -251,7 +283,7 @@ export default function FeaturedWork() {
 
                   {/* Timeline */}
                   <div>
-                    <h4 className="text-zinc-400 uppercase text-[10px] font-bold tracking-widest mb-8">Workflow</h4>
+                    <h4 className="text-zinc-400 uppercase text-[10px] font-bold tracking-widest mb-6 md:mb-8">Workflow</h4>
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-white/60 text-sm font-bold tracking-wider">
                       <div className="flex items-center gap-4 w-full">
                         <span className="shrink-0 text-white">HOOK</span>
@@ -274,7 +306,7 @@ export default function FeaturedWork() {
                   </div>
 
                   {/* Close action for easy exit after reading */}
-                  <div className="mt-10 md:mt-14">
+                  <div className="mt-8 md:mt-12">
                     <button
                       onClick={() => setSelectedProject(false)}
                       className="w-full py-4 rounded-full bg-white/5 border border-white/15 text-white font-bold text-[15px] hover:bg-primary hover:border-primary transition-colors duration-300"
