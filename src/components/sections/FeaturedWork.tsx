@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X, Play } from "lucide-react";
 
@@ -28,6 +28,49 @@ const shorts = ["osFJ78ha2jA", "qQsnVjubnos", "HL-si5SAsi0"];
 
 export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const lastTriggerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    lastTriggerRef.current = document.activeElement as HTMLElement | null;
+    closeBtnRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(false);
+        return;
+      }
+      // Basic focus trap: keep Tab cycling inside the dialog
+      if (e.key !== "Tab" || !overlayRef.current) return;
+      const focusable = Array.from(
+        overlayRef.current.querySelectorAll<HTMLElement>(
+          'button, a[href], iframe, [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      lastTriggerRef.current?.focus();
+    };
+  }, [selectedProject]);
 
   return (
     <section id="works" className="section-spacing bg-background">
@@ -41,7 +84,20 @@ export default function FeaturedWork() {
         <div className="flex flex-col gap-10 md:gap-16 max-w-6xl mx-auto">
 
           {/* Main Featured Project */}
-          <div className="w-full group cursor-pointer" onClick={() => setSelectedProject(true)}>
+          <div
+            role="button"
+            tabIndex={0}
+            aria-haspopup="dialog"
+            aria-label={`Open case study: ${featuredProject.title}`}
+            onClick={() => setSelectedProject(true)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setSelectedProject(true);
+              }
+            }}
+            className="w-full group cursor-pointer outline-none rounded-[24px] md:rounded-[36px] focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+          >
             <div className="relative aspect-video w-full rounded-[24px] md:rounded-[36px] overflow-hidden bg-dark transition-shadow duration-500 shadow-[0_10px_40px_rgba(0,0,0,.04)] group-hover:shadow-[0_25px_70px_rgba(0,0,0,.08)]">
               {/* Background Video */}
               <iframe
@@ -72,7 +128,7 @@ export default function FeaturedWork() {
             <div className="flex items-start justify-between gap-4 pt-5 md:pt-7">
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
-                  <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-dark/5 text-dark/70 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase">
+                  <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-white/5 text-white/70 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase">
                     {featuredProject.reach} Reach
                   </span>
                   <span className="px-3 py-1 sm:px-4 sm:py-1.5 bg-[#FF5A1F]/10 text-[#FF5A1F] rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase">
@@ -86,7 +142,7 @@ export default function FeaturedWork() {
 
               <button
                 onClick={(e) => { e.stopPropagation(); setSelectedProject(true); }}
-                className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-dark text-white text-sm font-medium hover:bg-primary transition-colors duration-300 shrink-0 mt-1"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-full bg-white text-[#171717] text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300 shrink-0 mt-1"
               >
                 View Case Study
                 <ArrowRight size={16} />
@@ -106,9 +162,17 @@ export default function FeaturedWork() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              ref={overlayRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="case-study-title"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) setSelectedProject(false);
+              }}
               className="fixed inset-0 z-[100] bg-[#0A0A0A] flex items-start md:items-center justify-center md:p-8 overflow-y-auto overscroll-contain"
             >
               <button
+                ref={closeBtnRef}
                 onClick={() => setSelectedProject(false)}
                 className="fixed top-5 right-5 md:top-8 md:right-8 z-[110] text-white/60 hover:text-white bg-white/10 border border-white/10 p-3.5 rounded-full transition-colors backdrop-blur-md"
                 aria-label="Close Case Study"
@@ -133,8 +197,8 @@ export default function FeaturedWork() {
                     loading="lazy"
                     allowFullScreen
                   />
-                  <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
-                  <div className="md:absolute md:bottom-10 md:left-12 md:max-w-none">
+                  <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent pointer-events-none" />
+                  <div className="pointer-events-none md:absolute md:bottom-10 md:left-12 md:max-w-none">
                     <div className="flex flex-wrap items-center gap-2 mb-2 md:mb-3 pt-4 px-4 md:pt-0 md:px-0">
                       <span className="px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-white/10 border border-white/15 text-white/80 text-[10px] md:text-[11px] font-bold tracking-wider uppercase">
                         The Virtual Podcast
@@ -146,12 +210,12 @@ export default function FeaturedWork() {
                         href="https://www.youtube.com/watch?v=3_oTy3uNRbo"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-primary text-white text-[10px] md:text-[11px] font-bold tracking-wider uppercase hover:bg-white hover:text-[#111111] transition-colors flex items-center gap-1.5"
+                        className="pointer-events-auto px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-primary text-white text-[10px] md:text-[11px] font-bold tracking-wider uppercase hover:bg-white hover:text-[#111111] transition-colors flex items-center gap-1.5"
                       >
                         Watch on YouTube
                       </a>
                     </div>
-                    <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white px-4 md:px-0 pb-4 md:pb-0">{featuredProject.title}</h2>
+                    <h2 id="case-study-title" className="text-2xl md:text-5xl font-bold tracking-tight text-white px-4 md:px-0 pb-4 md:pb-0">{featuredProject.title}</h2>
                   </div>
                 </div>
 
@@ -207,6 +271,16 @@ export default function FeaturedWork() {
                       </div>
                       <span className="shrink-0 text-primary">FINAL VIDEO</span>
                     </div>
+                  </div>
+
+                  {/* Close action for easy exit after reading */}
+                  <div className="mt-10 md:mt-14">
+                    <button
+                      onClick={() => setSelectedProject(false)}
+                      className="w-full py-4 rounded-full bg-white/5 border border-white/15 text-white font-bold text-[15px] hover:bg-primary hover:border-primary transition-colors duration-300"
+                    >
+                      Close Case Study
+                    </button>
                   </div>
 
                 </div>

@@ -11,20 +11,22 @@ const services = [
     icon: Camera,
     description: "Bringing concepts to life behind the lens. From conceptualization to final execution, I direct talent, configure lighting, and capture high-fidelity cinematic footage that aligns perfectly with your brand's creative vision.",
     features: ["Cinematography", "On-Set Direction", "Lighting & Rigging", "Pre-production Planning"],
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop"
+    image: "/Direction.jpg",
+    aspect: "aspect-[4/3]"
   },
   {
     title: "Social Media Management",
     icon: TrendingUp,
     description: "Turning great content into measurable growth. I develop data-driven content strategies, manage posting schedules, and optimize distribution across platforms to maximize organic reach and audience engagement.",
     features: ["Content Strategy", "Audience Growth", "Analytics & Reporting", "Trend Analysis"],
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1974&auto=format&fit=crop"
+    image: "/SMM.jpg",
+    aspect: "aspect-[4/3]"
   }
 ];
 
 export default function CaseStudies() {
   return (
-    <section id="beyond-editing" className="section-spacing bg-white">
+    <section id="beyond-editing" className="section-spacing bg-[#171717]">
       <div className="container-site">
         <SectionHeader
           eyebrow="Capabilities"
@@ -40,9 +42,9 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative rounded-[32px] overflow-hidden bg-[#FAFAFA] border border-border flex flex-col h-full"
+              className="group relative rounded-[32px] overflow-hidden bg-[#1E1E1E] border border-border flex flex-col h-full"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className={`relative ${service.aspect} overflow-hidden`}>
                 <Image
                   src={service.image}
                   alt={service.title}

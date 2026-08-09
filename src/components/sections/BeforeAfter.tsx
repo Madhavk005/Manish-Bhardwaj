@@ -49,7 +49,7 @@ const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
   };
 
   return (
-    <section id="results" className="section-spacing bg-[#FAFAFA] overflow-hidden">
+    <section id="results" className="section-spacing bg-[#171717] overflow-hidden">
       <div className="container-site">
         <SectionHeader
           eyebrow="Results"

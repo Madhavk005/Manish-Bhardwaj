@@ -77,10 +77,10 @@ export default function Services() {
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                 
                 <div className="flex justify-between items-start mb-6 relative z-10">
-                  <span className="px-4 py-1.5 rounded-full border border-border text-xs font-medium uppercase tracking-wider text-muted bg-[#FAFAFA]">
+                  <span className="px-4 py-1.5 rounded-full border border-border text-xs font-medium uppercase tracking-wider text-muted bg-white/5">
                     {service.tag}
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-[#FAFAFA] flex items-center justify-center border border-border group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-border group-hover:border-primary/30 group-hover:bg-primary/5 transition-colors">
                     <ArrowUpRight className="text-muted group-hover:text-primary transition-colors" size={20} />
                   </div>
                 </div>

@@ -29,13 +29,13 @@ function ReviewCard({
   return (
     <div
       className={cn(
-        "bg-white p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] border border-border transition-shadow duration-500",
+        "bg-[#1E1E1E] p-5 rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.45)] border border-border transition-shadow duration-500",
         className
       )}
     >
       <div className="flex items-center gap-3 mb-2">
-        <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-border overflow-hidden">
-          <Image src={logo} alt={client} width={40} height={40} className="w-full h-full object-cover bg-white" />
+        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-border overflow-hidden">
+          <Image src={logo} alt={client} width={40} height={40} className="w-full h-full object-cover bg-[#1E1E1E]" />
         </div>
         <div>
           <div className="text-sm font-bold leading-tight">{client}</div>
@@ -53,7 +53,7 @@ export default function Hero() {
   const currentData = activeCategory !== null ? retentionData[activeCategory] : { name: "Average", value: 72, points: "0,75 20,65 40,85 60,75 80,90 100,72" };
 
   return (
-    <section className="relative min-h-[100svh] pt-24 sm:pt-28 md:pt-40 pb-16 md:pb-24 flex items-center overflow-hidden bg-background">
+    <section id="home" className="relative min-h-[100svh] pt-24 sm:pt-28 md:pt-40 pb-16 md:pb-24 flex items-center overflow-hidden bg-background">
       {/* Decorative background */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div
@@ -85,7 +85,7 @@ export default function Hero() {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
             }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-border text-xs font-semibold text-muted uppercase tracking-wider mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-border text-xs font-semibold text-muted uppercase tracking-wider mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             ✦ Trusted by 50+ Creators
@@ -148,7 +148,7 @@ export default function Hero() {
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
-              href="https://wa.me/917023008854"
+              href="https://cal.com/manish-bhardwaj-aoxkqe"
               external
               variant="outline"
               className="w-full sm:w-auto"
@@ -210,7 +210,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-sm bg-white rounded-[28px] border border-border p-5 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] transition-shadow duration-400 z-0"
+            className="relative w-full max-w-sm bg-[#1E1E1E] rounded-[28px] border border-border p-5 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.45)] transition-shadow duration-400 z-0"
           >
             <div className="flex items-start justify-between mb-8">
               <div>
@@ -289,8 +289,8 @@ export default function Hero() {
                   className={cn(
                     "py-1.5 rounded-xl text-[10px] uppercase font-bold tracking-wider transition-all duration-300",
                     activeCategory === idx 
-                      ? "bg-dark text-white" 
-                      : "bg-[#FAFAFA] text-muted hover:bg-border"
+                      ? "bg-white text-[#171717]" 
+                      : "bg-white/5 text-muted hover:bg-white/10"
                   )}
                 >
                   {item.name}

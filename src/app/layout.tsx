@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   keywords: ["Video Editor", "Content Strategist", "Cinematography", "Video Production", "Premiere Pro", "After Effects", "Social Media Management"],
   authors: [{ name: "Manish Bhardwaj" }],
   creator: "Manish Bhardwaj",
+  metadataBase: new URL("https://manishbhardwaj.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -25,11 +26,20 @@ export const metadata: Metadata = {
     title: "Manish Bhardwaj | Premium Video Editor & Content Strategist",
     description: "High-end video editing and creative direction. Crafting cinematic visuals and scroll-stopping content for leading brands and creators.",
     siteName: "Manish Bhardwaj Portfolio",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Manish Bhardwaj — Premium Video Editor & Content Strategist",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Manish Bhardwaj | Premium Video Editor & Content Strategist",
     description: "High-end video editing and creative direction. Crafting cinematic visuals and scroll-stopping content for leading brands and creators.",
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,

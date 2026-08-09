@@ -53,7 +53,7 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-3 md:py-4",
-        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm shadow-black/5 border-b border-border/50" : "bg-transparent"
+        isScrolled ? "bg-[#171717]/80 backdrop-blur-md shadow-sm shadow-black/30 border-b border-border/50" : "bg-transparent"
       )}
     >
       {/* Scroll progress bar */}
@@ -79,7 +79,7 @@ export default function Navbar() {
           ))}
           <Link
             href="#contact"
-            className="px-6 py-2.5 bg-dark text-white rounded-full text-sm font-medium hover:bg-primary transition-colors"
+            className="px-6 py-2.5 bg-white text-[#171717] rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
           >
             Contact &rarr;
           </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
                 <Link
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-8 py-4 mt-4 bg-dark text-white rounded-full text-lg font-medium w-full text-center block hover:bg-primary transition-colors"
+                  className="px-8 py-4 mt-4 bg-white text-[#171717] rounded-full text-lg font-medium w-full text-center block hover:bg-primary hover:text-white transition-colors"
                 >
                   Contact
                 </Link>

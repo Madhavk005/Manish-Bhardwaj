@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FAFAFA;
-  --color-foreground: #111111;
+  --color-background: #171717;
+  --color-foreground: #F5F5F5;
   --color-primary: #FF5A1F;
-  --color-muted: #6B6B6B;
+  --color-muted: #A1A1AA;
   --color-dark: #0D0D0D;
-  --color-border: #ECECEC;
+  --color-border: rgba(255, 255, 255, 0.1);
 }
 
 @layer components {
@@ -18,7 +18,7 @@
     @apply py-24 md:py-32 lg:py-40;
   }
   .card-shell {
-    @apply bg-white border border-border rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_25px_70px_rgba(0,0,0,0.08)];
+    @apply bg-[#1E1E1E] border border-border rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.2)] transition-all duration-500 hover:shadow-[0_25px_70px_rgba(0,0,0,0.35)];
   }
 }
 
@@ -45,12 +45,12 @@ section[id] {
 
 @layer base {
   :root {
-    --background: #FAFAFA;
-    --foreground: #111111;
+    --background: #171717;
+    --foreground: #F5F5F5;
     --primary: #FF5A1F;
-    --muted: #6B6B6B;
+    --muted: #A1A1AA;
     --dark: #0D0D0D;
-    --border: #ECECEC;
+    --border: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -84,11 +84,11 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #3F3F46;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+  background: #52525B;
 }
 
 @theme {

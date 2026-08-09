@@ -10,7 +10,7 @@ const SOFTWARE_SKILLS = [
   { name: "After Effects", percentage: 70, icon: "/softwares/adobe-after-effects.png" },
   { name: "Photoshop", percentage: 80, icon: "/softwares/adobe-photoshop.png" },
   { name: "Illustrator", percentage: 50, icon: "/softwares/adobe-illustrator.png" },
-  { name: "Notion", percentage: 75, icon: "/softwares/notion.png" },
+  { name: "Notion", percentage: 75, icon: "/softwares/Notion.png" },
 ];
 
 function SkillBar({ skill, index }: { skill: (typeof SOFTWARE_SKILLS)[number]; index: number }) {
@@ -18,6 +18,7 @@ function SkillBar({ skill, index }: { skill: (typeof SOFTWARE_SKILLS)[number]; i
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   const count = useMotionValue(0);
+  const progress = useTransform(count, (v) => `${v}%`);
   useEffect(() => {
     if (!inView) return;
     const controls = animate(count, skill.percentage, {
@@ -35,7 +36,7 @@ function SkillBar({ skill, index }: { skill: (typeof SOFTWARE_SKILLS)[number]; i
       ref={ref}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className="group"
     >
@@ -61,14 +62,7 @@ function SkillBar({ skill, index }: { skill: (typeof SOFTWARE_SKILLS)[number]; i
       <div className="w-full h-[3px] md:h-1 bg-white/10 relative overflow-hidden rounded-full">
         {/* Progress Bar Fill */}
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.percentage}%` }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{
-            duration: 1.2,
-            ease: [0.16, 1, 0.3, 1],
-            delay: index * 0.12,
-          }}
+          style={{ width: progress }}
           className="absolute top-0 left-0 h-full bg-gradient-to-r from-white via-white to-primary shadow-[0_0_20px_rgba(255,90,31,0.35)]"
         >
           {/* Shimmer Sweep */}

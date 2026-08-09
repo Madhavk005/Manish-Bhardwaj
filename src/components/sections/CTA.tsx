@@ -33,7 +33,7 @@ export default function CTA() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto">
             <Button
-              href="https://wa.me/917023008854"
+              href="https://cal.com/manish-bhardwaj-aoxkqe"
               external
               variant="white"
               className="w-full sm:w-auto text-[16px] sm:text-[18px] font-bold px-8 sm:px-12 py-4 sm:py-5"

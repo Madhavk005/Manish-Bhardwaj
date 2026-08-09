@@ -48,7 +48,7 @@ export default function About() {
 
             {/* Floating Elements (optional subtle accents) */}
             <div className="absolute -z-10 top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute -z-10 bottom-10 -right-10 w-40 h-40 bg-dark/5 rounded-full blur-2xl" />
+            <div className="absolute -z-10 bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
           </motion.div>
 
           {/* Right Column - Content */}

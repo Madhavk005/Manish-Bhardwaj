@@ -12,11 +12,13 @@ import CaseStudies from "@/components/sections/CaseStudies";
 import Reviews from "@/components/sections/Reviews";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
+import SectionRail from "@/components/ui/SectionRail";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
+      <SectionRail />
       <Hero />
       <Showreel />
       <About />

@@ -13,11 +13,11 @@ const baseStyles =
   "group/btn relative overflow-hidden inline-flex items-center justify-center gap-2.5 px-7 py-3 sm:px-8 sm:py-4 rounded-full font-medium transition-all duration-300 hover:scale-[1.02]";
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  dark: "bg-dark text-white shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:bg-primary hover:shadow-[0_25px_70px_rgba(0,0,0,0.08)]",
+  dark: "bg-white text-[#171717] shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:bg-primary hover:text-white hover:shadow-[0_25px_70px_rgba(255,90,31,0.25)]",
   outline:
-    "bg-white border border-border text-foreground shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:bg-dark hover:text-white hover:shadow-[0_25px_70px_rgba(0,0,0,0.08)]",
+    "bg-transparent border border-border text-foreground shadow-[0_10px_40px_rgba(0,0,0,0.2)] hover:bg-white hover:text-[#171717] hover:border-white hover:shadow-[0_25px_70px_rgba(0,0,0,0.35)]",
   white:
-    "bg-white text-[#111111] shadow-[0_10px_40px_rgba(255,255,255,0.05)] hover:bg-primary hover:text-white hover:shadow-[0_25px_70px_rgba(255,90,31,0.2)]",
+    "bg-white text-[#171717] shadow-[0_10px_40px_rgba(255,255,255,0.05)] hover:bg-primary hover:text-white hover:shadow-[0_25px_70px_rgba(255,90,31,0.2)]",
 };
 
 export function Button({
