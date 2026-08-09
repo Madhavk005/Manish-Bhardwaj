@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -14,9 +14,21 @@ const navLinks = [
   { name: "Reviews", href: "#reviews" },
 ];
 
+const menuVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] as const },
+  }),
+};
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,11 +52,16 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4",
-        isScrolled ? "bg-white shadow-sm border-b border-border/50" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-3 md:py-4",
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm shadow-black/5 border-b border-border/50" : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+      {/* Scroll progress bar */}
+      <motion.div
+        style={{ scaleX: progress }}
+        className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-gradient-to-r from-primary via-[#FF8A4C] to-primary z-50"
+      />
+      <div className="container-site flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold tracking-tight text-foreground relative z-50">
           MB.
         </Link>
@@ -55,7 +72,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted hover:text-primary transition-colors hover:underline decoration-primary/60 underline-offset-8 decoration-2"
             >
               {link.name}
             </Link>
@@ -70,7 +87,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden relative z-50 p-2 -mr-2"
+          className="md:hidden relative z-50 p-2.5 -mr-2.5"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -84,25 +101,34 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 z-40 h-[100dvh] w-full bg-background flex flex-col items-center justify-center gap-8 px-6"
+              className="fixed inset-0 z-40 h-[100dvh] w-full bg-background flex flex-col items-center justify-center gap-7 px-6 overflow-y-auto py-12"
             >
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-2xl font-bold text-foreground"
-                >
-                  {link.name}
-                </Link>
+              {navLinks.map((link, i) => (
+                <motion.div key={link.name} custom={i} variants={menuVariants} initial="hidden" animate="visible">
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
-              <Link
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-8 py-4 mt-4 bg-dark text-white rounded-full text-lg font-medium w-full text-center"
+              <motion.div
+                custom={navLinks.length}
+                variants={menuVariants}
+                initial="hidden"
+                animate="visible"
+                className="w-full"
               >
-                Contact
-              </Link>
+                <Link
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-8 py-4 mt-4 bg-dark text-white rounded-full text-lg font-medium w-full text-center block hover:bg-primary transition-colors"
+                >
+                  Contact
+                </Link>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

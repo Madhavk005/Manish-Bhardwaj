@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const SOFTWARE_SKILLS = [
   { name: "Premiere Pro", percentage: 90, icon: "/softwares/adobe-premiere-pro.png" },
@@ -13,23 +14,15 @@ const SOFTWARE_SKILLS = [
 
 export default function SoftwareProficiency() {
   return (
-    <section className="relative py-16 md:py-32 bg-[#050505] text-white overflow-hidden">
+    <section className="relative section-spacing bg-[#050505] text-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-[1000px]">
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <SectionHeader
+          eyebrow="Software"
+          title="Software Proficiency"
+          subtitle="The technical foundation behind the storytelling."
+          tone="dark"
           className="mb-12 md:mb-20"
-        >
-          <h2 className="text-[32px] md:text-[48px] font-bold tracking-[-0.02em] leading-tight mb-4">
-            Software Proficiency
-          </h2>
-          <p className="text-[#A1A1AA] text-lg md:text-xl max-w-2xl">
-            The technical foundation behind the storytelling.
-          </p>
-        </motion.div>
+        />
 
         <div className="flex flex-col space-y-8 md:space-y-12">
           {SOFTWARE_SKILLS.map((skill, index) => (
@@ -64,7 +57,7 @@ export default function SoftwareProficiency() {
                     ease: [0.16, 1, 0.3, 1], // Custom cinematic circOut/power3 equivalent
                     delay: index * 0.1 
                   }}
-                  className="absolute top-0 left-0 h-full bg-white"
+                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-white via-white to-primary shadow-[0_0_20px_rgba(255,90,31,0.35)]"
                 />
               </div>
             </div>

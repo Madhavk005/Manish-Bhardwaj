@@ -4,7 +4,7 @@ import LogoAnimations from "@/components/sections/LogoAnimations";
 
 export default function LogoAnimationsPage() {
   return (
-    <main className="min-h-screen bg-background pt-24">
+    <main className="min-h-screen bg-background pt-20 md:pt-24">
       <Navbar />
       <LogoAnimations />
       <Footer />

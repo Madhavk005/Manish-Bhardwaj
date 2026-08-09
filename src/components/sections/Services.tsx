@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import Link from "next/link";
 import Image from "next/image";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const services = [
   {
@@ -54,18 +55,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-24 lg:py-[120px] bg-background">
-      <div className="container mx-auto px-6 md:px-12 max-w-[1280px]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6 md:gap-8">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-foreground">
-              What I Do Best
-            </h2>
-            <p className="text-muted text-[18px] max-w-md">
-              I craft scroll-stopping edits that keep your audience hooked and your content looking top-tier.
-            </p>
-          </div>
-        </div>
+    <section id="services" className="section-spacing bg-background">
+      <div className="container-site">
+        <SectionHeader
+          eyebrow="Services"
+          title="What I Do Best"
+          subtitle="I craft scroll-stopping edits that keep your audience hooked and your content looking top-tier."
+        />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
@@ -75,7 +71,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative bg-white border border-border rounded-[28px] p-6 md:p-8 transition-all duration-400 overflow-hidden flex flex-col h-full min-h-[420px] shadow-[0_10px_40px_rgba(0,0,0,.04)] hover:shadow-[0_25px_70px_rgba(0,0,0,.08)] hover:-translate-y-2 cursor-pointer"
+                className="group relative card-shell p-6 md:p-8 transition-all duration-400 overflow-hidden flex flex-col h-full min-h-[420px] hover:-translate-y-2 cursor-pointer"
               >
                 {/* Subtle hover glow */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />

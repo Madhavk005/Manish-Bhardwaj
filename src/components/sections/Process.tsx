@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Upload, Layout, MessageSquare, Send } from "lucide-react";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const steps = [
   {
@@ -84,19 +85,18 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Zero Friction Workflow
-          </h2>
-          <p className="text-muted text-lg max-w-xl mx-auto">
-            You create. I execute. A seamless process built for speed and quality.
-          </p>
-        </div>
+    <section id="process" className="section-spacing bg-white">
+      <div className="container-site">
+        <SectionHeader
+          eyebrow="Workflow"
+          title="Zero Friction Workflow"
+          subtitle="You create. I execute. A seamless process built for speed and quality."
+          align="center"
+          className="mb-20"
+        />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          {/* Connecting Line */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
+          {/* Connecting Line (desktop) */}
           <div className="hidden lg:block absolute top-12 left-0 w-full h-px bg-border -z-10" />
 
           {steps.map((step, idx) => (
@@ -108,15 +108,20 @@ export default function Process() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="relative"
             >
-              <div className="w-16 h-16 bg-white border-2 border-border rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-                <step.icon className="text-foreground" size={24} />
-              </div>
-              
-              <div className="text-primary font-mono text-sm font-bold mb-2">STEP {step.num}</div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">{step.title}</h3>
-              
-              <div className="h-48">
-                {step.content}
+              <div className="bg-white md:bg-transparent border border-border md:border-0 rounded-[24px] md:rounded-none p-6 md:p-0 shadow-[0_10px_40px_rgba(0,0,0,0.04)] md:shadow-none">
+                <div className="flex items-center justify-between md:block md:mb-8 gap-5 mb-6">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-white border-2 border-border rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                    <step.icon className="text-foreground" size={24} />
+                  </div>
+                  <span className="text-primary font-mono text-[13px] md:text-sm font-bold md:mt-8 md:mb-2 leading-none">
+                    STEP {step.num}
+                  </span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">{step.title}</h3>
+                
+                <div className="h-44 md:h-48">
+                  {step.content}
+                </div>
               </div>
             </motion.div>
           ))}

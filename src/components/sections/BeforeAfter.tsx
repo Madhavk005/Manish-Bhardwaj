@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useInView, animate } from "framer-motion";
 import { MoveHorizontal } from "lucide-react";
 import Image from "next/image";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -32,8 +33,7 @@ export default function BeforeAfter() {
       };
     }
   }, [isInView]);
-
-  const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
+const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!containerRef.current) return;
     
     const { left, width } = containerRef.current.getBoundingClientRect();
@@ -44,17 +44,19 @@ export default function BeforeAfter() {
     setSliderPosition(percentage);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    handleMouseMove(e);
+  };
+
   return (
-    <section className="py-16 md:py-24 lg:py-[120px] bg-[#FAFAFA] overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 max-w-[1280px]">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-4 text-foreground">
-            The Impact
-          </h2>
-          <p className="text-muted text-[18px] max-w-xl mx-auto">
-            Raw footage is just potential. The edit is the realization.
-          </p>
-        </div>
+    <section id="results" className="section-spacing bg-[#FAFAFA] overflow-hidden">
+      <div className="container-site">
+        <SectionHeader
+          eyebrow="Results"
+          title="The Impact"
+          subtitle="Raw footage is just potential. The edit is the realization."
+          align="center"
+        />
 
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
@@ -62,8 +64,9 @@ export default function BeforeAfter() {
           <div className="lg:col-span-8 relative">
             <div 
               ref={containerRef}
-              className="relative aspect-video rounded-[36px] overflow-hidden cursor-ew-resize select-none bg-dark shadow-[0_10px_40px_rgba(0,0,0,.04)]"
+              className="relative aspect-video rounded-[36px] overflow-hidden cursor-ew-resize select-none bg-dark shadow-[0_10px_40px_rgba(0,0,0,.04)] touch-none"
               onMouseMove={handleMouseMove}
+              onTouchStart={handleTouchStart}
               onTouchMove={handleMouseMove}
             >
               {/* RAW Image (Background) */}
@@ -122,7 +125,7 @@ export default function BeforeAfter() {
 
           {/* Metrics */}
           <div ref={metricsRef} className="lg:col-span-4 flex flex-col justify-center gap-6">
-            <div className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-border">
+            <div className="card-shell p-6 md:p-8">
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Retention</div>
               <div className="flex items-center gap-3 md:gap-4">
                 <span className="text-2xl md:text-3xl font-bold text-foreground opacity-30">17%</span>
@@ -131,7 +134,7 @@ export default function BeforeAfter() {
               </div>
             </div>
 
-            <div className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-border">
+            <div className="card-shell p-6 md:p-8">
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Watch Time</div>
               <div className="flex items-center gap-3 md:gap-4">
                 <span className="text-2xl md:text-3xl font-bold text-foreground opacity-30">32s</span>
@@ -140,7 +143,7 @@ export default function BeforeAfter() {
               </div>
             </div>
 
-            <div className="bg-white rounded-[28px] p-6 md:p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)] border border-border">
+            <div className="card-shell p-6 md:p-8">
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Click Through Rate</div>
               <div className="flex items-center gap-3 md:gap-4">
                 <span className="text-2xl md:text-3xl font-bold text-foreground opacity-30">1.2%</span>

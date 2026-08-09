@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Camera, TrendingUp } from "lucide-react";
 import Image from "next/image";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const services = [
   {
@@ -23,16 +24,13 @@ const services = [
 
 export default function CaseStudies() {
   return (
-    <section id="beyond-editing" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Beyond The Edit
-          </h2>
-          <p className="text-muted text-lg max-w-xl">
-            A holistic approach to content creation—from capturing the raw vision to scaling it across platforms.
-          </p>
-        </div>
+    <section id="beyond-editing" className="section-spacing bg-white">
+      <div className="container-site">
+        <SectionHeader
+          eyebrow="Capabilities"
+          title="Beyond The Edit"
+          subtitle="A holistic approach to content creation—from capturing the raw vision to scaling it across platforms."
+        />
 
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
@@ -54,7 +52,7 @@ export default function CaseStudies() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/30">
                     <service.icon size={24} />
                   </div>
                   <h3 className="text-2xl font-bold text-white tracking-tight">{service.title}</h3>

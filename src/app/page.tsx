@@ -4,6 +4,7 @@ import Showreel from "@/components/sections/Showreel";
 import About from "@/components/sections/About";
 import SoftwareProficiency from "@/components/sections/SoftwareProficiency";
 import Services from "@/components/sections/Services";
+import Process from "@/components/sections/Process";
 import BeforeAfter from "@/components/sections/BeforeAfter";
 import FeaturedWork from "@/components/sections/FeaturedWork";
 import CaseStudies from "@/components/sections/CaseStudies";
@@ -21,6 +22,7 @@ export default function Home() {
       <About />
       <SoftwareProficiency />
       <Services />
+      <Process />
       <BeforeAfter />
       <FeaturedWork />
       <CaseStudies />

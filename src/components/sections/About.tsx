@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const stats = [
   { value: "4+", label: "Years Experience" },
@@ -10,9 +11,16 @@ const stats = [
 ];
 
 export default function About() {
+  const imgRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"],
+  });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   return (
-    <section id="about" className="py-16 md:py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="about" className="section-spacing bg-background overflow-hidden">
+      <div className="container-site">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
           
           {/* Left Column - Image */}
@@ -22,18 +30,21 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative lg:sticky lg:top-32"
+            ref={imgRef}
           >
-            <div className="aspect-[4/5] max-w-md mx-auto lg:ml-0 lg:mr-auto rounded-3xl overflow-hidden relative group shadow-2xl">
-              {/* Image with B&W to Color transition */}
-              <div 
-                className="absolute inset-0 bg-[url('/M3_08297.jpg')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" 
-                role="img"
-                aria-label="Portrait of Manish Bhardwaj"
-              />
-              
-              {/* Overlay styling */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
+            <motion.div style={{ y: parallaxY }} className="relative">
+              <div className="aspect-[4/5] max-w-md mx-auto lg:ml-0 lg:mr-auto rounded-3xl overflow-hidden relative group shadow-2xl">
+                {/* Image with B&W to Color transition */}
+                <div 
+                  className="absolute inset-0 bg-[url('/M3_08297.jpg')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-110" 
+                  role="img"
+                  aria-label="Portrait of Manish Bhardwaj"
+                />
+                
+                {/* Overlay styling */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </motion.div>
 
             {/* Floating Elements (optional subtle accents) */}
             <div className="absolute -z-10 top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
@@ -48,6 +59,10 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-8">
+              <span className="flex items-center gap-2 text-[13px] md:text-sm font-bold uppercase tracking-[0.2em] text-primary mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                About
+              </span>
               Behind every <br className="hidden md:block" />
               great video <br className="hidden md:block" />
               is <span className="text-muted italic font-normal">timing.</span> <br />

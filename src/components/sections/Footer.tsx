@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-background py-12 border-t border-border relative">
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="container-site">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <Link href="/" className="text-3xl font-bold tracking-tight text-foreground block mb-6">
@@ -140,7 +140,7 @@ export default function Footer() {
               </motion.div>
 
               {/* Desk Elements */}
-              <div className="absolute bottom-0 w-full flex justify-between items-end px-20">
+              <div className="absolute bottom-0 w-full hidden md:flex justify-between items-end px-20">
                 {/* Coffee */}
                 <motion.div 
                   initial={{ opacity: 0 }}

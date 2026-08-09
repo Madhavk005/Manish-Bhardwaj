@@ -4,7 +4,7 @@ import DocumentaryTestimonials from "@/components/sections/DocumentaryTestimonia
 
 export default function DocumentaryTestimonialsPage() {
   return (
-    <main className="min-h-screen bg-background pt-24">
+    <main className="min-h-screen bg-background pt-20 md:pt-24">
       <Navbar />
       <DocumentaryTestimonials />
       <Footer />

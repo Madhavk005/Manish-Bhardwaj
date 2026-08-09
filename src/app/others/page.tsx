@@ -4,7 +4,7 @@ import Others from "@/components/sections/Others";
 
 export default function OthersPage() {
   return (
-    <main className="min-h-screen bg-background pt-24">
+    <main className="min-h-screen bg-background pt-20 md:pt-24">
       <Navbar />
       <Others />
       <Footer />
