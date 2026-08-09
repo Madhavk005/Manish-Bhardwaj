@@ -35,17 +35,27 @@ export default function BeforeAfter() {
   }, [isInView]);
 const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!containerRef.current) return;
-    
+
     const { left, width } = containerRef.current.getBoundingClientRect();
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
     const x = Math.max(0, Math.min(clientX - left, width));
     const percentage = (x / width) * 100;
-    
+
     setSliderPosition(percentage);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
     handleMouseMove(e);
+  };
+
+  const handleSliderKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      setSliderPosition((prev) => Math.max(0, prev - 5));
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      setSliderPosition((prev) => Math.min(100, prev + 5));
+    }
   };
 
   return (
@@ -62,9 +72,16 @@ const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
           
           {/* Comparison Slider */}
           <div className="lg:col-span-8 relative">
-            <div 
+            <div
               ref={containerRef}
-              className="relative aspect-video rounded-[36px] overflow-hidden cursor-ew-resize select-none bg-dark shadow-[0_10px_40px_rgba(0,0,0,.04)] touch-none"
+              role="slider"
+              tabIndex={0}
+              aria-label="Before and after comparison slider"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(sliderPosition)}
+              onKeyDown={handleSliderKeyDown}
+              className="relative aspect-video rounded-[36px] overflow-hidden cursor-ew-resize select-none bg-dark shadow-[0_10px_40px_rgba(0,0,0,.04)] touch-none focus-visible:ring-2 focus-visible:ring-primary/60"
               onMouseMove={handleMouseMove}
               onTouchStart={handleTouchStart}
               onTouchMove={handleMouseMove}

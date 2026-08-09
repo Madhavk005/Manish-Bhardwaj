@@ -1,12 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X, Monitor, Coffee, Music } from "lucide-react";
 
 export default function Footer() {
   const [isEditMode, setIsEditMode] = useState(false);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isEditMode) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsEditMode(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    closeBtnRef.current?.focus();
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isEditMode]);
 
   return (
     <>
@@ -92,13 +103,17 @@ export default function Footer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Edit mode experience"
             className="fixed inset-0 z-[200] bg-[#050505] flex items-center justify-center overflow-hidden"
           >
             {/* Background elements */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(30,30,40,0.4)_0%,transparent_60%)]" />
             <div className="absolute top-10 left-10 w-96 h-64 bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop')] bg-cover opacity-10 rounded-lg transform -rotate-6 blur-sm" />
             
-            <button 
+            <button
+              ref={closeBtnRef}
               onClick={() => setIsEditMode(false)}
               className="absolute top-8 right-8 text-white/50 hover:text-white z-10 transition-colors"
               aria-label="Close Edit Mode"

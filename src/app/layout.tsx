@@ -9,7 +9,7 @@ import SmoothScrolling from "@/components/SmoothScrolling";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FAFAFA",
+  themeColor: "#171717",
 };
 
 export const metadata: Metadata = {

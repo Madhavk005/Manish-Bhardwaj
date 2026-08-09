@@ -14,6 +14,7 @@ export default function FBVideos() {
         />
 
         <ShortsGrid
+          titlePrefix="Food & Beverage"
           videoIds={[
             "cpnYXpi-gOc",
             "B0F5bsensHk",

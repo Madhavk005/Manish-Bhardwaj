@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X, Play } from "lucide-react";
+import { ShortsGrid } from "@/components/ui/ShortsGrid";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { TagPill, spring } from "@/components/ui/TagPill";
 import { cn } from "@/lib/utils";
 
 const featuredProject = {
@@ -19,12 +22,6 @@ const featuredProject = {
     result: "Established a professional and recognizable visual signature that elevates the production value of every episode."
   }
 };
-
-
-
-import { ShortsGrid } from "@/components/ui/ShortsGrid";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { TagPill, spring } from "@/components/ui/TagPill";
 
 const shorts = ["osFJ78ha2jA", "qQsnVjubnos", "HL-si5SAsi0"];
 
@@ -161,8 +158,8 @@ export default function FeaturedWork() {
                     !uiVisible && "pointer-events-none"
                   )}
                 >
-                  <TagPill label={`${featuredProject.reach} Reach`} dotClassName="bg-white/70" />
-                  <TagPill label={`${featuredProject.engagement} Engagement`} dotClassName="bg-primary" />
+                  <TagPill label={`${featuredProject.reach} Reach`} />
+                  <TagPill label={`${featuredProject.engagement} Engagement`} />
                 </motion.div>
               </div>
 
@@ -177,7 +174,7 @@ export default function FeaturedWork() {
           </div>
 
           {/* Shorts — swipeable on mobile, grid from sm */}
-          <ShortsGrid videoIds={shorts} />
+          <ShortsGrid titlePrefix="Portfolio" videoIds={shorts} />
 
         </div>
 
@@ -234,8 +231,8 @@ export default function FeaturedWork() {
                         uiVisible ? "pointer-events-auto" : "pointer-events-none"
                       )}
                     >
-                      <TagPill label="The Virtual Podcast" dotClassName="bg-white/70" />
-                      <TagPill label="Episode Intro" dotClassName="bg-primary" />
+                      <TagPill label="The Virtual Podcast" />
+                      <TagPill label="Episode Intro" />
                       <motion.a
                         href="https://www.youtube.com/watch?v=3_oTy3uNRbo"
                         target="_blank"

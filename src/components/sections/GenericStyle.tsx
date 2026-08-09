@@ -42,11 +42,12 @@ export default function GenericStyle() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="group w-full cursor-pointer lg:col-span-2 lg:w-1/2 lg:mx-auto"
           >
-            <VideoEmbed videoId="hMKtjynudlc" />
+            <VideoEmbed videoId="hMKtjynudlc" title="Generic style corporate edit" />
           </motion.div>
         </div>
 
         <ShortsGrid
+          titlePrefix="Generic style"
           className="mt-10 md:mt-12"
           videoIds={[
             "MQbunb2LfTU",

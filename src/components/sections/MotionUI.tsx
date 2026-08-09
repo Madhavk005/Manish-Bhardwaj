@@ -24,7 +24,7 @@ export default function MotionUI() {
             transition={{ duration: 0.6 }}
             className="group w-full cursor-pointer"
           >
-            <VideoEmbed videoId="E7w0AN2EuZ4" />
+            <VideoEmbed videoId="E7w0AN2EuZ4" title="Motion UI demo — screen animation" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,11 +33,12 @@ export default function MotionUI() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="group w-full cursor-pointer"
           >
-            <VideoEmbed videoId="YWwKVkqu8cE" />
+            <VideoEmbed videoId="YWwKVkqu8cE" title="Motion UI demo — product walkthrough" />
           </motion.div>
         </div>
 
         <ShortsGrid
+          titlePrefix="Motion UI"
           videoIds={["osFJ78ha2jA", "jhm7P7Nc_nc", "IE-dQ-JsIHQ", "vdfAce-gBJU", "ojNfEi6DS7I", "teBNuqAN3qY"]}
           className="mt-10 md:mt-12"
         />

@@ -13,7 +13,7 @@ export default function LogoAnimations() {
           subtitle="Custom motion graphics. Fluid transitions. Breathing life into static brand assets."
         />
 
-        <ShortsGrid videoIds={["dXRiv7I1-fw", "FHx9xjaTFr8", "3i0uEt5RMB4", "-irL28vmWuQ"]} />
+        <ShortsGrid titlePrefix="Logo animation" videoIds={["dXRiv7I1-fw", "FHx9xjaTFr8", "3i0uEt5RMB4", "-irL28vmWuQ"]} />
       </div>
     </section>
   );

@@ -27,7 +27,7 @@ export default function DocumentaryTestimonials() {
               transition={{ duration: 0.6 }}
               className="group cursor-pointer"
             >
-              <VideoEmbed videoId="HDgAkZ4pt2w" />
+              <VideoEmbed videoId="HDgAkZ4pt2w" title="Documentary testimonial video — Part 1" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function DocumentaryTestimonials() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="group cursor-pointer"
             >
-              <VideoEmbed videoId="8hfSJxbnP7U" />
+              <VideoEmbed videoId="8hfSJxbnP7U" title="Documentary testimonial video — Part 2" />
             </motion.div>
           </div>
 
@@ -49,12 +49,13 @@ export default function DocumentaryTestimonials() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="group w-full max-w-[360px] cursor-pointer"
             >
-              <ShortsEmbed videoId="sEf376v0ILg" />
+              <ShortsEmbed videoId="sEf376v0ILg" title="Documentary testimonial short" />
             </motion.div>
           </div>
         </div>
 
         <ShortsGrid
+          titlePrefix="Testimonial"
           videoIds={["tXU-9UClogc", "ne1ylQUID0Q", "h7cpJ7aaLHI", "Psao2ptHDBw", "f3b3q-ZUTMk"]}
           className="mt-12 md:mt-16"
         />

@@ -6,10 +6,11 @@ import { cn } from "@/lib/utils";
 
 interface ShortsGridProps {
   videoIds: string[];
+  titlePrefix?: string;
   className?: string;
 }
 
-export function ShortsGrid({ videoIds, className }: ShortsGridProps) {
+export function ShortsGrid({ videoIds, titlePrefix = "YouTube", className }: ShortsGridProps) {
   return (
     <div
       className={cn(
@@ -19,14 +20,14 @@ export function ShortsGrid({ videoIds, className }: ShortsGridProps) {
     >
       {videoIds.map((videoId, index) => (
         <motion.div
-          key={videoId}
+          key={`${videoId}-${index}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.5, delay: (index % 4) * 0.06 }}
           className="w-full snap-center"
         >
-          <ShortsEmbed videoId={videoId} />
+          <ShortsEmbed videoId={videoId} title={`${titlePrefix} short ${index + 1}`} />
         </motion.div>
       ))}
     </div>
