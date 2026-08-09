@@ -101,24 +101,56 @@ export default function SectionRail() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-      onMouseMove={(e) => mouseY.set(e.clientY)}
-      onMouseLeave={() => mouseY.set(99999)}
-      aria-label="Section navigation"
-      className="fixed right-10 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col"
-    >
-      {sections.map((section, index) => (
-        <DockItem
-          key={section.id}
-          section={section}
-          index={index}
-          active={active === section.id}
-          mouseY={mouseY}
-        />
-      ))}
-    </motion.nav>
+    <>
+      {/* Mobile & Tablet — compact dot rail */}
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        aria-label="Section navigation"
+        className="fixed right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 lg:hidden flex flex-col items-center gap-2.5"
+      >
+        {sections.map((section) => (
+          <motion.button
+            key={section.id}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            onClick={() =>
+              document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" })
+            }
+            aria-current={active === section.id ? "true" : undefined}
+            aria-label={`Go to ${section.label}`}
+            className={cn(
+              "rounded-full transition-all duration-500 ease-out",
+              active === section.id
+                ? "w-2 h-4 bg-primary"
+                : "w-1.5 h-1.5 bg-white/25"
+            )}
+          />
+        ))}
+      </motion.nav>
+
+      {/* Desktop — Apple-style magnification rail */}
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        onMouseMove={(e) => mouseY.set(e.clientY)}
+        onMouseLeave={() => mouseY.set(99999)}
+        aria-label="Section navigation"
+        className="fixed right-10 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col"
+      >
+        {sections.map((section, index) => (
+          <DockItem
+            key={section.id}
+            section={section}
+            index={index}
+            active={active === section.id}
+            mouseY={mouseY}
+          />
+        ))}
+      </motion.nav>
+    </>
   );
 }
