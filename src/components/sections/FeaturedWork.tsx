@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Play, Volume2, VolumeX, X } from "lucide-react";
+import { ArrowUpRight, Play, Repeat, Volume2, VolumeX, X } from "lucide-react";
 import { ShortsGrid } from "@/components/ui/ShortsGrid";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { TagPill, spring } from "@/components/ui/TagPill";
@@ -30,6 +30,8 @@ const featuredProject = {
 
 const shorts = ["osFJ78ha2jA", "qQsnVjubnos", "HL-si5SAsi0"];
 
+const loopParam = "&loop=1&playlist=3_oTy3uNRbo";
+
 const workflowSteps = ["HOOK", "EDIT", "COLOR", "SFX", "FINAL VIDEO"];
 
 function CaseSection({
@@ -56,6 +58,7 @@ function CaseSection({
 export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
+  const [loopOn, setLoopOn] = useState(true);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
@@ -151,7 +154,7 @@ export default function FeaturedWork() {
             <div className="relative aspect-video w-full rounded-[24px] md:rounded-[40px] overflow-hidden bg-dark border border-border transition-shadow duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.25)] group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
               <iframe
                 className="absolute inset-0 w-full h-full scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
-                src={featuredProject.videoUrl}
+                src={loopOn ? featuredProject.videoUrl : featuredProject.videoUrl.replace(loopParam, "")}
                 frameBorder="0"
                 scrolling="no"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -172,6 +175,17 @@ export default function FeaturedWork() {
               </div>
 
               {cornerBrackets}
+
+              {/* Loop toggle */}
+              <button
+                onClick={() => setLoopOn((v) => !v)}
+                aria-pressed={loopOn}
+                aria-label={loopOn ? "Disable video loop" : "Enable video loop"}
+                className="absolute top-5 right-5 md:top-7 md:right-7 z-30 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300"
+              >
+                <Repeat size={14} />
+                {loopOn ? "Loop On" : "Loop Off"}
+              </button>
 
               {/* Play affordance — decorative only, never blocks the player */}
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -269,7 +283,10 @@ export default function FeaturedWork() {
                 <div className="relative aspect-video md:aspect-[21/9] bg-black rounded-none md:rounded-t-[36px] overflow-hidden">
                   <iframe
                     className="w-full h-full"
-                    src={soundOn ? featuredProject.videoUrl.replace("&mute=1", "&mute=0") : featuredProject.videoUrl}
+                    src={(soundOn
+                      ? featuredProject.videoUrl.replace("&mute=1", "&mute=0")
+                      : featuredProject.videoUrl
+                    ).replace(loopParam, loopOn ? loopParam : "")}
                     frameBorder="0"
                     scrolling="no"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -280,16 +297,27 @@ export default function FeaturedWork() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent pointer-events-none" />
 
-                  {/* Sound toggle — video opens muted (WCAG 1.4.2) */}
-                  <button
-                    onClick={() => setSoundOn((v) => !v)}
-                    aria-pressed={soundOn}
-                    aria-label={soundOn ? "Mute video" : "Unmute video"}
-                    className="absolute top-5 left-5 md:top-6 md:right-6 md:left-auto z-30 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300"
-                  >
-                    {soundOn ? <Volume2 size={14} /> : <VolumeX size={14} />}
-                    {soundOn ? "On" : "Off"}
-                  </button>
+                  {/* Media controls — video opens muted (WCAG 1.4.2), loop toggle */}
+                  <div className="absolute top-5 left-5 md:top-6 md:right-6 md:left-auto z-30 flex items-center gap-2">
+                    <button
+                      onClick={() => setSoundOn((v) => !v)}
+                      aria-pressed={soundOn}
+                      aria-label={soundOn ? "Mute video" : "Unmute video"}
+                      className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300"
+                    >
+                      {soundOn ? <Volume2 size={14} /> : <VolumeX size={14} />}
+                      {soundOn ? "On" : "Off"}
+                    </button>
+                    <button
+                      onClick={() => setLoopOn((v) => !v)}
+                      aria-pressed={loopOn}
+                      aria-label={loopOn ? "Disable video loop" : "Enable video loop"}
+                      className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300"
+                    >
+                      <Repeat size={14} />
+                      {loopOn ? "Loop On" : "Loop Off"}
+                    </button>
+                  </div>
 
                   {/* Hero chip — hidden on mobile (title block below covers it) */}
                   <div className="hidden md:flex absolute top-7 left-7 items-center gap-3 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-4 py-2">
