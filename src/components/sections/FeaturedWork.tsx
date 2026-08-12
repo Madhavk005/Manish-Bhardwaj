@@ -55,31 +55,10 @@ function CaseSection({
 
 export default function FeaturedWork() {
   const [selectedProject, setSelectedProject] = useState(false);
-  const [uiVisible, setUiVisible] = useState(true);
   const [soundOn, setSoundOn] = useState(false);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.matchMedia("(pointer: coarse)").matches) return;
-
-    let timer: ReturnType<typeof setTimeout>;
-    const reveal = () => {
-      setUiVisible(true);
-      clearTimeout(timer);
-      timer = setTimeout(() => setUiVisible(false), 3000);
-    };
-    reveal();
-    window.addEventListener("mousemove", reveal);
-    window.addEventListener("keydown", reveal);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("mousemove", reveal);
-      window.removeEventListener("keydown", reveal);
-    };
-  }, []);
 
   useEffect(() => {
     if (!selectedProject) return;
@@ -121,14 +100,7 @@ export default function FeaturedWork() {
   }, [selectedProject]);
 
   const caseStudyPills = (
-    <motion.div
-      animate={{ opacity: uiVisible ? 1 : 0, y: uiVisible ? 0 : 8 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className={cn(
-        "flex flex-wrap items-center gap-2 mt-2.5 md:mt-3",
-        uiVisible ? "pointer-events-auto" : "pointer-events-none"
-      )}
-    >
+    <div className="pointer-events-auto flex flex-wrap items-center gap-2 mt-2.5 md:mt-3">
       <TagPill label="The Virtual Podcast" />
       <TagPill label="Episode Intro" />
       <motion.a
@@ -142,7 +114,7 @@ export default function FeaturedWork() {
       >
         Watch on YouTube
       </motion.a>
-    </motion.div>
+    </div>
   );
 
   const cornerBrackets = (
@@ -228,17 +200,10 @@ export default function FeaturedWork() {
                 <h3 className="text-[26px] sm:text-3xl md:text-5xl font-bold text-foreground tracking-tight leading-[1.05]">
                   {featuredProject.title}
                 </h3>
-                <motion.div
-                  animate={{ opacity: uiVisible ? 1 : 0, y: uiVisible ? 0 : 8 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  className={cn(
-                    "flex flex-wrap items-center gap-2 mt-4 md:mt-5",
-                    !uiVisible && "pointer-events-none"
-                  )}
-                >
+                <div className="flex flex-wrap items-center gap-2 mt-4 md:mt-5">
                   <TagPill label={`${featuredProject.reach} Reach`} />
                   <TagPill label={`${featuredProject.engagement} Engagement`} />
-                </motion.div>
+                </div>
               </div>
 
               <button
